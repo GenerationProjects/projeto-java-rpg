@@ -38,10 +38,7 @@ public class ControleMenu {
 
     public static void iniciarJogo() {
         loreInicial();
-
         escolhaDeClasse();
-
-
     }
 
 }
