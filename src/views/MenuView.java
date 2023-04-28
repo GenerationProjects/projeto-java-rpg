@@ -54,17 +54,12 @@ public class MenuView {
         System.out.print(ANSI_RED + menuClasses);
     }
 
-    public static void limpaTela() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
-
     public static void impressaoLentaPorCaracter(String texto) {
         for (int i = 0; i < texto.length(); i++) {
             char c = texto.charAt(i);
             System.out.print(ANSI_BLUE + c);
             try {
-                TimeUnit.MILLISECONDS.sleep(250);
+                TimeUnit.MILLISECONDS.sleep(50);
             } catch (Exception e) {
 
             }
