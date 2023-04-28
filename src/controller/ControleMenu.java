@@ -11,6 +11,7 @@ public class ControleMenu {
     public static void controleInicial() {
 
 
+
         Scanner sc = new Scanner(System.in);
         int op = 0;
 
@@ -37,11 +38,13 @@ public class ControleMenu {
                 }
             }
         }
+
     }
 
     //Metodo para iniciar jogo.
     public static void iniciarJogo() {
 
+        loreInicial();
         Scanner sc = new Scanner(System.in);
         int op = 0;
 
