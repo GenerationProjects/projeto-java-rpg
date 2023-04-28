@@ -44,7 +44,7 @@ public class MenuView {
                 |              Escolha a sua classe              |
                 |                                                |
                 |                                                |
-                |                1 - Guerreiro                   |
+                |                1 - Kingth                      |
                 |                2 - Arcano                      |
                 |                3 - Arqueiro                    |
                 |                                                |            
