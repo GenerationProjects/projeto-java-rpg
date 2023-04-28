@@ -35,7 +35,7 @@ public class ControleMenu {
         }
     }
 
-
+   //Metodo para iniciar jogo.
     public static void iniciarJogo() {
         loreInicial();
         escolhaDeClasse();
