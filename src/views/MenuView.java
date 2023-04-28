@@ -65,9 +65,9 @@ public class MenuView {
                 |              Escolha a sua classe              |
                 |                                                |
                 |                                                |
-                |                1 - Kingth                      |
+                |                1 - Guerreiro                   |
                 |                2 - Arcano                      |
-                |                3 - Arqueiro                    |
+                |                3 - Caçador                     |
                 |                                                |            
                 |                                                |
                 |________________________________________________|
@@ -80,7 +80,7 @@ public class MenuView {
             char c = texto.charAt(i);
             System.out.print(ANSI_BLUE + c);
             try {
-                TimeUnit.MILLISECONDS.sleep(50);
+                TimeUnit.MILLISECONDS.sleep(10);
             } catch (Exception e) {
 
             }
