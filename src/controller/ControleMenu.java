@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.InputMismatchException;
+
 import java.util.Scanner;
 
 import static views.MenuView.*;
@@ -8,6 +9,7 @@ import static views.MenuView.*;
 public class ControleMenu {
 
     public static void controleInicial() {
+
 
         try {
             Scanner sc = new Scanner(System.in);
@@ -40,5 +42,6 @@ public class ControleMenu {
         loreInicial();
         escolhaDeClasse();
     }
+
 
 }
