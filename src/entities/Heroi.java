@@ -1,6 +1,8 @@
 package entities;
 
-public abstract class Heroi {
+import repository.GameRepository;
+
+public abstract class Heroi implements GameRepository {
     private String nome;
     private int hp;
     private int stamina;

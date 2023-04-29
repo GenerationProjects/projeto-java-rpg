@@ -10,6 +10,7 @@ public class ControleMenu {
     public static void controleInicial() {
 
 
+
         Scanner sc = new Scanner(System.in);
         int op = 0;
 
@@ -34,7 +35,9 @@ public class ControleMenu {
                     op = 0;
                 }
             }
+
         }
+
     }
 
     //Metodo para iniciar jogo.
@@ -44,6 +47,7 @@ public class ControleMenu {
         int op = 0;
 
         loreInicial();
+
         while (op == 0) {
             escolhaDeClasse();
 
@@ -53,6 +57,11 @@ public class ControleMenu {
                 System.out.println("\nEscolha uma classe! Vamos tentar de novo...");
                 op = 0;
             }
+
+
+
+        escolhaDeClasse();
+
 
             switch (op) {
                 case 1 -> {
@@ -77,5 +86,7 @@ public class ControleMenu {
 
             }
         }
+
     }
+
 }
