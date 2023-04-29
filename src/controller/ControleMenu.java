@@ -1,7 +1,6 @@
 package controller;
 
 import java.util.InputMismatchException;
-
 import java.util.Scanner;
 
 import static views.MenuView.*;
@@ -22,7 +21,6 @@ public class ControleMenu {
                 op = sc.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("Errou !! (Fausto silva). Vamos começar mesmo assim!");
-                sc.nextLine();
                 op = 1;
             }
 
@@ -52,8 +50,7 @@ public class ControleMenu {
             try {
                 op = sc.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("\nEscolha uma classe! Pressione enter para tentar de novo...");
-                sc.nextLine();
+                System.out.println("\nEscolha uma classe! Vamos tentar de novo...");
                 op = 0;
             }
 
@@ -75,7 +72,6 @@ public class ControleMenu {
                 }
                 default -> {
                     System.out.println("Opção inválida! Vamos novamente...");
-                    sc.nextLine();
                     op = 0;
                 }
 
