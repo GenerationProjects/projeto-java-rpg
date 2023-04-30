@@ -7,9 +7,9 @@ public class Guerreiro extends Heroi {
         super(nome, hp, stamina, mana, altura, gender, raca);
         this.resistencia = resistencia;
     }
-<<<<<<< HEAD
 
 
-=======
+
+
 }
->>>>>>> 53f0e34 (Update program)
+
