@@ -10,6 +10,7 @@ public class ControleMenu {
     public static void controleInicial() {
 
 
+
         Scanner sc = new Scanner(System.in);
         int op = 0;
 
@@ -19,12 +20,14 @@ public class ControleMenu {
             inicialMenu();
             try {
                 op = sc.nextInt();
+                case 1 -> iniciarJogo();
+                case 2 -> iniciarJogo();
+                case 3 -> iniciarJogo();
 
             } catch (InputMismatchException e) {
                 System.out.println("Errou !! (Fausto silva). Vamos começar mesmo assim!");
                 op = 1;
             }
-
 
         }
 
@@ -48,8 +51,6 @@ public class ControleMenu {
                 System.out.println("\nEscolha uma classe! Vamos tentar de novo...");
                 op = 0;
             }
-
-            escolhaDeClasse();
 
 
             switch (op) {

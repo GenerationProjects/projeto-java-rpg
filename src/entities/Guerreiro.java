@@ -8,8 +8,5 @@ public class Guerreiro extends Heroi {
         this.resistencia = resistencia;
     }
 
-
-
-
 }
 
