@@ -22,13 +22,11 @@ public class ControleMenu {
 		while (op == 0) {
 			inicialMenu();
 			try {
-
 				op = sc.nextInt();
 				switch (op) {
 				case 1 -> iniciarJogo();
 				case 2 -> iniciarJogo();
 				case 3 -> iniciarJogo();
-
 				}
 
 			} catch (InputMismatchException e) {
@@ -37,7 +35,6 @@ public class ControleMenu {
 			}
 
 		}
-
 	}
 
 	// Metodo para iniciar jogo.
@@ -45,10 +42,10 @@ public class ControleMenu {
 
 		Scanner sc = new Scanner(System.in);
 		int op = 0;
-		String nome , raca;
+		String nome, raca;
 		float altura;
 		int esc;
-		
+
 		loreInicial();
 
 		while (op == 0) {
@@ -72,10 +69,13 @@ public class ControleMenu {
 				escolhaDeRaca();
 				esc = sc.nextInt();
 				sc.nextLine();
-			
-				if (esc == 1) raca = "Humano";
-				else if (esc == 2) raca = "Orc";
-				else raca = "Elfo";
+
+				if (esc == 1)
+					raca = "Humano";
+				else if (esc == 2)
+					raca = "Orc";
+				else
+					raca = "Elfo";
 			}
 			case 2 -> {
 				System.out.println("Classe selecionada: Arcano");
@@ -84,13 +84,16 @@ public class ControleMenu {
 				System.out.print("Digite sua altura: ");
 				altura = sc.nextFloat();
 				escolhaDeRaca();
-				
+
 				esc = sc.nextInt();
 				sc.nextLine();
-			
-				if (esc == 1) raca = "Humano";
-				else if (esc == 2) raca = "Orc";
-				else raca = "Elfo";
+
+				if (esc == 1)
+					raca = "Humano";
+				else if (esc == 2)
+					raca = "Orc";
+				else
+					raca = "Elfo";
 			}
 			case 3 -> {
 				System.out.println("Classe selecionada: Caçador");
@@ -99,26 +102,28 @@ public class ControleMenu {
 				System.out.print("Digite sua altura: ");
 				altura = sc.nextFloat();
 				escolhaDeRaca();
-				
+
 				esc = sc.nextInt();
 				sc.nextLine();
-			
-				if (esc == 1) raca = "Humano";
-				else if (esc == 2) raca = "Orc";
-				else raca = "Elfo";
+
+				if (esc == 1)
+					raca = "Humano";
+				else if (esc == 2)
+					raca = "Orc";
+				else
+					raca = "Elfo";
 			}
 			default -> {
 				System.out.println("Opção inválida! Vamos novamente...");
 				op = 0;
 			}
-
 			}
 		}
 
 	}
+
 	public static int rolarDados() {
 		return new Random().nextInt(1, 20);
 	}
-	
 
 }
