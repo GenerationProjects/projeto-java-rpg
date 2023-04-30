@@ -20,20 +20,13 @@ public class ControleMenu {
             inicialMenu();
             try {
                 op = sc.nextInt();
-            } catch (InputMismatchException e) {
-                System.out.println("Errou !! (Fausto silva). Vamos começar mesmo assim!");
-                op = 1;
-            }
-
-            switch (op) {
                 case 1 -> iniciarJogo();
                 case 2 -> iniciarJogo();
                 case 3 -> iniciarJogo();
-                default -> {
-                    System.out.println("Opção inválida! Vamos novamente...");
-                    sc.nextLine();
-                    op = 0;
-                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("Errou !! (Fausto silva). Vamos começar mesmo assim!");
+                op = 1;
             }
 
         }
@@ -42,6 +35,7 @@ public class ControleMenu {
 
     //Metodo para iniciar jogo.
     public static void iniciarJogo() {
+
 
         Scanner sc = new Scanner(System.in);
         int op = 0;
@@ -57,10 +51,6 @@ public class ControleMenu {
                 System.out.println("\nEscolha uma classe! Vamos tentar de novo...");
                 op = 0;
             }
-
-
-
-        escolhaDeClasse();
 
 
             switch (op) {
@@ -90,3 +80,5 @@ public class ControleMenu {
     }
 
 }
+
+
