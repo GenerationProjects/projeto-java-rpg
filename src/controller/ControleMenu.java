@@ -9,83 +9,37 @@ public class ControleMenu {
 
     public static void controleInicial() {
 
+        try {
+            Scanner sc = new Scanner(System.in);
+            int op = 0;
 
-
-        Scanner sc = new Scanner(System.in);
-        int op = 0;
-
-        introLore();
-
-        while (op == 0) {
+            introLore();
             inicialMenu();
-            try {
-                op = sc.nextInt();
-            } catch (InputMismatchException e) {
-                System.out.println("Errou !! (Fausto silva). Vamos começar mesmo assim!");
-                op = 1;
-            }
+            op = sc.nextInt();
 
-            switch (op) {
-                case 1 -> iniciarJogo();
-                case 2 -> iniciarJogo();
-                case 3 -> iniciarJogo();
-                default -> {
-                    System.out.println("Opção inválida! Vamos novamente...");
-                    sc.nextLine();
-                    op = 0;
+            do {
+                switch (op) {
+                    case 1 -> iniciarJogo();
+                    case 2 -> iniciarJogo();
+                    case 3 -> iniciarJogo();
+                    default -> System.out.println("valor inesperado: " + op);
                 }
-            }
 
+            } while (op < 1 || op > 4);
+
+        } catch (InputMismatchException e) {
+            System.out.println("Somente números !!");
         }
 
     }
 
     //Metodo para iniciar jogo.
     public static void iniciarJogo() {
-
-        Scanner sc = new Scanner(System.in);
-        int op = 0;
-
         loreInicial();
-
-        while (op == 0) {
-            escolhaDeClasse();
-
-            try {
-                op = sc.nextInt();
-            } catch (InputMismatchException e) {
-                System.out.println("\nEscolha uma classe! Vamos tentar de novo...");
-                op = 0;
-            }
-
 
 
         escolhaDeClasse();
 
-
-            switch (op) {
-                case 1 -> {
-                    System.out.println("Classe selecionada: Guerreiro");
-                    System.out.println("Escolha seu nome: ");
-                    sc.nextLine();
-                }
-                case 2 -> {
-                    System.out.println("Classe selecionada: Arcano");
-                    System.out.println("Escolha seu nome: ");
-                    sc.nextLine();
-                }
-                case 3 -> {
-                    System.out.println("Classe selecionada: Caçador");
-                    System.out.println("Escolha seu nome: ");
-                    sc.nextLine();
-                }
-                default -> {
-                    System.out.println("Opção inválida! Vamos novamente...");
-                    op = 0;
-                }
-
-            }
-        }
 
     }
 
