@@ -20,7 +20,7 @@ public class MenuView {
 
 	public static void loreInicial() {
 		String inicio = """
-    
+
 				Ultric era um Rei que governava com punhos fortes, ambicioso e dominador,
 				casado com a rainha Nefereti Belmond e seus 3 filhos, Nagiel, Aquio e Estrid.
 				Em uma noite de comemoração de suas vitórias em campo de batalha, o rei Ultric
@@ -32,6 +32,7 @@ public class MenuView {
 				A jornada se inicia em um pequeno vilarejo ao norte de Helmont, onde seu povoado
 				estava se destacando e caminhando para a independência, fugindo das mãos do rei
 				Ultric. Com isso houve uma retaliação por parte do rei ao povo da Kocorico Village.
+
 				""";
 		impressaoLentaPorCaracter(inicio);
 	}

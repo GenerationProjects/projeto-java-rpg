@@ -1,16 +1,24 @@
 package controller;
 
+
 import entities.Arcano;
 import entities.Cacador;
 import entities.Guerreiro;
 import entities.Heroi;
+
+import static views.MenuView.escolhaDeClasse;
+import static views.MenuView.escolhaDeRaca;
+import static views.MenuView.inicialMenu;
+import static views.MenuView.introLore;
+import static views.MenuView.loreInicial;
+
+
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
-import static views.MenuView.*;
-
 public class ControleMenu {
+
 
     public static void controleInicial() {
 

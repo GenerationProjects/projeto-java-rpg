@@ -3,6 +3,7 @@ package entities;
 import repository.GameRepository;
 
 public abstract class Heroi implements GameRepository {
+
     private String nome;
     private int hp;
     private float altura;
