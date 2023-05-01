@@ -6,16 +6,12 @@ import entities.Cacador;
 import entities.Guerreiro;
 import entities.Heroi;
 
-import static views.MenuView.escolhaDeClasse;
-import static views.MenuView.escolhaDeRaca;
-import static views.MenuView.inicialMenu;
-import static views.MenuView.introLore;
-import static views.MenuView.loreInicial;
-
 
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
+
+import static views.MenuView.*;
 
 public class ControleMenu {
 
@@ -31,15 +27,20 @@ public class ControleMenu {
             inicialMenu();
             try {
                 op = sc.nextInt();
-                switch (op) {
-                    case 1 -> iniciarJogo();
-                    case 2 -> iniciarJogo();
-                    case 3 -> iniciarJogo();
-                }
-
             } catch (InputMismatchException e) {
                 System.out.println("Errou !! (Fausto silva). Vamos começar mesmo assim!");
                 op = 1;
+            }
+
+            switch (op) {
+                case 1 -> iniciarJogo();
+                case 2 -> iniciarJogo();
+                case 3 -> iniciarJogo();
+                default -> {
+                    System.out.println("Opção inválida! Vamos novamente...");
+                    sc.nextLine();
+                    op = 0;
+                }
             }
 
         }
@@ -47,12 +48,14 @@ public class ControleMenu {
 
     // Metodo para iniciar jogo.
     public static void iniciarJogo() {
+        loreInicial();
+        condicaoDeClasse();
+    }
 
+    public static void condicaoDeClasse() {
         Scanner sc = new Scanner(System.in);
         int op = 0;
         Heroi heroi;
-
-        loreInicial();
 
         while (op == 0) {
             escolhaDeClasse();
@@ -62,6 +65,7 @@ public class ControleMenu {
                 sc.nextLine();
             } catch (InputMismatchException e) {
                 System.out.println("\nEscolha uma classe! Vamos tentar de novo...");
+                sc.nextLine();
                 op = 0;
             }
 
@@ -75,7 +79,6 @@ public class ControleMenu {
                 }
             }
         }
-
     }
 
     public static int rolarDados() {
@@ -89,13 +92,84 @@ public class ControleMenu {
         int esc;
 
         System.out.println("\nClasse selecionada: " + tipoClasse);
+        int conf = 0;
 
-        if (op == 1) {
-
-        } else if (op == 2) {
-
-        } else {
-
+        switch (op) {
+            case 1 -> {
+                loreGuerreiro();
+                while (conf == 0) {
+                    System.out.println("""
+                            Deseja confirmar?
+                            1 - Sim.
+                            2 - Escolher outra classe.
+                            """);
+                    try {
+                        conf = sc.nextInt();
+                        sc.nextLine();
+                    } catch (InputMismatchException e) {
+                        System.out.println("\nConfirme ou escolha outra classe para continuar...");
+                        sc.nextLine();
+                        conf = 0;
+                    }
+                    if (conf>2 || conf<0){
+                        System.out.println("Opção inválida, vamos de novo!");
+                        conf = 0;
+                    }
+                }
+                if (conf == 2) {
+                    condicaoDeClasse();
+                }
+            }
+            case 2 -> {
+                loreArcanista();
+                while (conf == 0) {
+                    System.out.println("""
+                            Deseja confirmar?
+                            1 - Sim.
+                            2 - Escolher outra classe.
+                            """);
+                    try {
+                        conf = sc.nextInt();
+                        sc.nextLine();
+                    } catch (InputMismatchException e) {
+                        System.out.println("\nConfirme ou escolha outra classe para continuar...");
+                        sc.nextLine();
+                        conf = 0;
+                    }
+                    if (conf>2 || conf<0){
+                        System.out.println("Opção inválida, vamos de novo!");
+                        conf = 0;
+                    }
+                }
+                if (conf == 2) {
+                    condicaoDeClasse();
+                }
+            }
+            case 3 -> {
+                loreCacador();
+                while (conf == 0) {
+                    System.out.println("""
+                            Deseja confirmar?
+                            1 - Sim.
+                            2 - Escolher outra classe.
+                            """);
+                    try {
+                        conf = sc.nextInt();
+                        sc.nextLine();
+                    } catch (InputMismatchException e) {
+                        System.out.println("\nConfirme ou escolha outra classe para continuar...");
+                        sc.nextLine();
+                        conf = 0;
+                    }
+                    if (conf>2 || conf<0){
+                        System.out.println("Opção inválida, vamos de novo!");
+                        conf = 0;
+                    }
+                }
+                if (conf == 2) {
+                    condicaoDeClasse();
+                }
+            }
         }
 
         System.out.print("Escolha seu nome: ");

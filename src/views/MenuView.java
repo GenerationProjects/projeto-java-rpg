@@ -42,7 +42,7 @@ public class MenuView {
 
 				 _________________________________________________
 				|                                                |
-				|            Bem Vindos Helmont Adventure        |
+				|          Bem Vindos ao Helmont Adventure       |
 				|              Escolhas as opções                |
 				|                                                |
 				|                1 - Jogar                       |
@@ -109,6 +109,54 @@ public class MenuView {
 				Escolha uma Genero: """;
 		System.out.print(ANSI_RED + menuGeneros);
 
+	}
+
+	public static void loreGuerreiro() {
+		System.out.println("""
+       
+    			Guerreiro: Os Guerreiros são os mais fortes do reino.
+				A origem dos guerreiros é obscura, mas muitos acreditam que ela surgiu em resposta
+				às constantes guerras e conflitos que assolavam as terras. Em tempos de paz, serviam
+				como protetores dos reinos, patrulhando fronteiras e defendendo cidades contra invasores.
+				
+				Lista de ataques:
+				Golpe supurante
+				Corte profundo
+				Apunhalada
+				
+				""");
+	}
+
+	public static void loreCacador() {
+		System.out.println("""		
+    
+				Caçador: Os Caçadores são  combatentes treinados para o longo alcance.
+				A origem é incerta, mas muitos acreditam que eles surgiram entre os povos das florestas,
+				que dependiam da caça para sobreviver. Com o tempo se tornaram lutadores habilidosos,
+				capazes de atirar flechas com precisão mortal.
+				
+				Lista de ataques:
+				Chuva de flechas
+				Tiro certeiro
+				Flecha flamejante
+				
+				""");
+	}
+
+	public static void loreArcanista() {
+		System.out.println("""
+    
+				Arcanista: Os Arcanistas são uma ordem de magos que usam de poderes místicos.
+				Surgiram das sociedades antigas, que se dedicaram a pesquisas e ao estudo de magia.
+				Com o tempo, esses estudiosos se tornaram capazes de controlar a energia mágica a seu prazer,
+				usando para realizar grandes feitos e mudar o curso das coisas.
+				
+				Lista de ataques:
+				Orbe explosivo
+				Chuva de espadas arcana
+				Saraivada mágica
+				
+				""");
 	}
 
 	public static void impressaoLentaPorCaracter(String texto) {
