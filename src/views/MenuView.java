@@ -3,6 +3,7 @@ package views;
 import java.util.concurrent.TimeUnit;
 
 public class MenuView {
+
 	public static final String ANSI_RED = "\u001B[31m";
 	public static final String ANSI_BLUE = "\u001B[34m";
 

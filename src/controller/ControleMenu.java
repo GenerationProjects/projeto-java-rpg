@@ -12,6 +12,7 @@ import java.util.Scanner;
 
 public class ControleMenu {
 
+
 	public static void controleInicial() {
 
 		Scanner sc = new Scanner(System.in);
@@ -127,3 +128,6 @@ public class ControleMenu {
 	}
 
 }
+
+
+ 
