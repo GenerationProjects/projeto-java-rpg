@@ -1,9 +1,9 @@
 package application;
 
-import controller.ControleMenu;
+import static controller.ControleMenu.controleInicial;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println(ControleMenu.rolarDados());
+        controleInicial();
     }
 }
