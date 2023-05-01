@@ -3,65 +3,66 @@ package entities;
 import repository.GameRepository;
 
 public abstract class Heroi implements GameRepository {
-	private String nome;
-	private int hp;
-	private float altura;
-	private String gender;
-	private String raca;
 
-	public Heroi(String nome, int hp, float altura, String gender, String raca) {
-		this.nome = nome;
-		this.hp = hp;
-		this.altura = altura;
-		this.gender = gender;
-		this.raca = raca;
-	}
+    private String nome;
+    private int hp;
+    private float altura;
+    private String gender;
+    private String raca;
 
-	public String getNome() {
-		return nome;
-	}
+    public Heroi(String nome, int hp, float altura, String gender, String raca) {
+        this.nome = nome;
+        this.hp = hp;
+        this.altura = altura;
+        this.gender = gender;
+        this.raca = raca;
+    }
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public int getHp() {
-		return hp;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	public void setHp(int hp) {
-		this.hp = hp;
-	}
+    public int getHp() {
+        return hp;
+    }
 
-	public float getAltura() {
-		return altura;
-	}
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
 
-	public void setAltura(float altura) {
-		this.altura = altura;
-	}
+    public float getAltura() {
+        return altura;
+    }
 
-	public String getGender() {
-		return gender;
-	}
+    public void setAltura(float altura) {
+        this.altura = altura;
+    }
 
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+    public String getGender() {
+        return gender;
+    }
 
-	public String getRaca() {
-		return raca;
-	}
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-	public void setRaca(String raca) {
-		this.raca = raca;
-	}
+    public String getRaca() {
+        return raca;
+    }
 
-	public int atacar() {
-		return 0;
-	}
+    public void setRaca(String raca) {
+        this.raca = raca;
+    }
 
-	public int defender() {
-		return 0;
-	}
+    public int atacar() {
+        return 0;
+    }
+
+    public int defender() {
+        return 0;
+    }
 }
