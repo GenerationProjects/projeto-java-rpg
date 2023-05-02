@@ -180,10 +180,34 @@ public class ControleMenu {
         System.out.print("Digite sua altura: ");
         altura = sc.nextFloat();
         escolhaDeRaca();
-
+        
         esc = sc.nextInt();
         sc.nextLine();
 
+        while (esc == 0) {
+            System.out.println("""
+                    Deseja confirmar?
+                    1 - Sim.
+                    2 - Escolher outra raça.
+                    """);
+            try {
+            	esc = sc.nextInt();
+                sc.nextLine();
+            } catch (InputMismatchException e) {
+                System.out.println("\nConfirme ou escolha outra classe para continuar...");
+                sc.nextLine();
+                esc = 0;
+            }
+            if (esc>2 || esc<0){
+                System.out.println("Opção inválida, vamos de novo!");
+                esc = 0;
+            }
+        }
+        if (esc == 2) {
+        	escolhaDeRaca();
+        }
+        
+        
         raca = (esc == 1) ? "Humano" : (esc == 2) ? "Orc" : "Elfo";
 
         escolhaDeGenero();
