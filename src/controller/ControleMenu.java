@@ -14,12 +14,15 @@ import java.util.Scanner;
 import static views.MenuView.*;
 
 public class ControleMenu {
+	 
+	 Heroi heroi;
 
 
     public static void controleInicial() {
 
         Scanner sc = new Scanner(System.in);
         int op = 0;
+        
 
         introLore();
 
@@ -55,7 +58,7 @@ public class ControleMenu {
     public static void condicaoDeClasse() {
         Scanner sc = new Scanner(System.in);
         int op = 0;
-        Heroi heroi;
+        
 
         while (op == 0) {
             escolhaDeClasse();
@@ -85,7 +88,7 @@ public class ControleMenu {
         return new Random().nextInt(1, 20);
     }
 
-    public static void escolhaDoNomeERaca(Scanner sc, int op) {
+    public static Heroi escolhaDoNomeERaca(Scanner sc, int op) {
 
         String nome, raca, tipoClasse = (op == 1) ? "Guerreiro" : (op == 2) ? "Arcano" : "Caçador", genero;
         float altura;
@@ -190,10 +193,19 @@ public class ControleMenu {
 
         genero = (esc == 1) ? "Masculino" : "Feminino";
 
-        Heroi heroi = (op == 1) ? new Guerreiro(nome, 2000, altura, genero, raca) :
+         return (op == 1) ? new Guerreiro(nome, 2000, altura, genero, raca) :
                 (op == 2) ? new Arcano(nome, 1000, altura, genero, raca) :
                         new Cacador(nome, 1500, altura, genero, raca);
-
+        
+        
+        
     }
 
+    public static void continuacao (Heroi heroi) {
+    	inicioJornada();
+    	int op;
+    	Scanner sc = new Scanner(System.in);
+    	
+    }
+    
 }
