@@ -113,50 +113,119 @@ public class MenuView {
 
 	public static void loreGuerreiro() {
 		System.out.println("""
-       
-    			Guerreiro: Os Guerreiros são os mais fortes do reino.
+
+							Guerreiro: Os Guerreiros são os mais fortes do reino.
 				A origem dos guerreiros é obscura, mas muitos acreditam que ela surgiu em resposta
 				às constantes guerras e conflitos que assolavam as terras. Em tempos de paz, serviam
 				como protetores dos reinos, patrulhando fronteiras e defendendo cidades contra invasores.
-				
+
 				Lista de ataques:
 				Golpe supurante
 				Corte profundo
 				Apunhalada
-				
+
 				""");
 	}
 
 	public static void loreCacador() {
-		System.out.println("""		
-    
+		System.out.println("""
+
 				Caçador: Os Caçadores são  combatentes treinados para o longo alcance.
 				A origem é incerta, mas muitos acreditam que eles surgiram entre os povos das florestas,
 				que dependiam da caça para sobreviver. Com o tempo se tornaram lutadores habilidosos,
 				capazes de atirar flechas com precisão mortal.
-				
+
 				Lista de ataques:
 				Chuva de flechas
 				Tiro certeiro
 				Flecha flamejante
-				
+
 				""");
 	}
 
 	public static void loreArcanista() {
 		System.out.println("""
-    
+
 				Arcanista: Os Arcanistas são uma ordem de magos que usam de poderes místicos.
 				Surgiram das sociedades antigas, que se dedicaram a pesquisas e ao estudo de magia.
 				Com o tempo, esses estudiosos se tornaram capazes de controlar a energia mágica a seu prazer,
 				usando para realizar grandes feitos e mudar o curso das coisas.
-				
+
 				Lista de ataques:
 				Orbe explosivo
 				Chuva de espadas arcana
 				Saraivada mágica
-				
+
 				""");
+	}
+
+	public static void inicioJornada() {
+
+		impressaoLentaPorCaracter("""
+				Você acorda com fortes dores pelo corpo e cabeça, e não se lembra de nada, só carregando
+				as roupas do corpo, e olhando ao redor, tudo o que vê são destroços e poças de sangue.
+
+				Andando por aquelas ruínas, se depara com uma abertura no chão:
+				""");
+	}
+
+	public static void primeiraEscolha() {
+		String menuEscolha1 = """
+
+				 _________________________________________________
+				|                                                |
+				|                    Escolha                     |
+				|                                                |
+				|                                                |
+				|                                                |
+				|              1 - entrar no buraco              |
+				|              2 - continuar seu caminho         |
+				|                                                |
+				|                                                |
+				|                                                |
+				|________________________________________________|
+				Escolha uma das opções: """;
+		System.out.print(ANSI_RED + menuEscolha1);
+
+	}
+
+	public static void segundaEscolha() {
+		String menuEscolha2 = """
+
+				 _________________________________________________
+				|                                                |
+				|                    Escolha                     |
+				|                                                |
+				|                                                |
+				|                                                |
+				|          1 - Enfrentar e matar                 |
+				|          2 - Tentar convencer com argumentos   |
+				|                                                |
+				|                                                |
+				|                                                |
+				|________________________________________________|
+				Escolha uma das opções: """;
+		System.out.print(ANSI_RED + menuEscolha2);
+
+	}
+
+	public static void terceiraEscolha() {
+		String menuEscolha3 = """
+
+				 _________________________________________________
+				|                                                |
+				|                    Escolha                     |
+				|                                                |
+				|                                                |
+				|                                                |
+				|               1 - poupar o lich                |
+				|               2 - matar o lich                 |
+				|               3 - matar o rei e o lich         |
+				|                                                |
+				|                                                |
+				|________________________________________________|
+				Escolha uma das opções: """;
+		System.out.print(ANSI_RED + menuEscolha3);
 	}
 
 	public static void impressaoLentaPorCaracter(String texto) {
