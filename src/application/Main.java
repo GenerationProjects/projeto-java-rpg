@@ -1,12 +1,13 @@
 package application;
 
 import java.util.Locale;
-import static controller.ControleMenu.controleInicial;
+
+import controller.ControleMenu;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-
+    	ControleMenu sl = new ControleMenu();
         Locale.setDefault(Locale.US);
-        controleInicial();
+        sl.continuacao();
     }
 }

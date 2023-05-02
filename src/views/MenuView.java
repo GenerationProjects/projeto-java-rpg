@@ -11,9 +11,9 @@ public class MenuView {
 		String intro = """
 				Terra média SÉC XIV.
 
-				Bem-vindo ao reino de Helmont: um mundo mágico repleto de montanhas congeladas, 
-				planícies, pântanos obscuros e criaturas místicas, governado pelo rei Calander Ultric, 
-				que tem punhos fortes, é ambicioso e dominador. Casado com a rainha Nefereti Belmond, 
+				Bem-vindo ao reino de Helmont: um mundo mágico repleto de montanhas congeladas,
+				planícies, pântanos obscuros e criaturas místicas, governado pelo rei Calander Ultric,
+				que tem punhos fortes, é ambicioso e dominador. Casado com a rainha Nefereti Belmond,
 				tem três filhos: Nagiel, Aquio e Estrid.
 				""";
 		impressaoLentaPorCaracter(intro);
@@ -21,14 +21,14 @@ public class MenuView {
 
 	public static void loreInicial() {
 		String inicio = """
-				Em uma noite de comemoração de suas vitórias em campo de batalha, o rei Ultric convoca 
-				seu bobo da corte para alegrar a festa com seus contos, e durante uma de suas histórias, 
-				a rainha se sente insultada pelas palavras proferidas vindas do bobo. O rei observando a 
-				cena, para preservar a honra de sua rainha, ordena que matem o responsável pelas histórias, 
+				Em uma noite de comemoração de suas vitórias em campo de batalha, o rei Ultric convoca
+				seu bobo da corte para alegrar a festa com seus contos, e durante uma de suas histórias,
+				a rainha se sente insultada pelas palavras proferidas vindas do bobo. O rei observando a
+				cena, para preservar a honra de sua rainha, ordena que matem o responsável pelas histórias,
 				e jogue seus restos no pântano de Breakwood.
 
-				A jornada se inicia em um pequeno vilarejo ao norte de Helmont, onde seu povoado estava se 
-				destacando e caminhando para a independência, fugindo das mãos do rei Ultric. Com isso, houve 
+				A jornada se inicia em um pequeno vilarejo ao norte de Helmont, onde seu povoado estava se
+				destacando e caminhando para a independência, fugindo das mãos do rei Ultric. Com isso, houve
 				uma retaliação por parte do rei ao povo da Kocorico Village.
 				""";
 		impressaoLentaPorCaracter(inicio);
@@ -110,11 +110,11 @@ public class MenuView {
 
 	public static void loreGuerreiro() {
 		System.out.println("""
-				Os Guerreiros são os mais fortes do reino. A origem dos guerreiros é obscura, mas muitos 
-				acreditam que ela surgiu em resposta às constantes guerras e conflitos que assolavam as 
-				terras. Em tempos de paz, serviam como protetores dos reinos, patrulhando fronteiras e 
+				Os Guerreiros são os mais fortes do reino. A origem dos guerreiros é obscura, mas muitos
+				acreditam que ela surgiu em resposta às constantes guerras e conflitos que assolavam as
+				terras. Em tempos de paz, serviam como protetores dos reinos, patrulhando fronteiras e
 				defendendo cidades contra invasores.
-				
+
 				Lista de ataques:
 				Golpe supurante
 				Corte profundo
@@ -124,10 +124,10 @@ public class MenuView {
 
 	public static void loreCacador() {
 		System.out.println("""
-				Os Caçadores são combatentes treinados para o longo alcance. A origem é incerta, mas muitos 
-				acreditam que eles surgiram entre os povos das florestas, que dependiam da caça para sobreviver. 
+				Os Caçadores são combatentes treinados para o longo alcance. A origem é incerta, mas muitos
+				acreditam que eles surgiram entre os povos das florestas, que dependiam da caça para sobreviver.
 				Com o tempo se tornaram lutadores habilidosos, capazes de atirar flechas com precisão mortal.
-				
+
 				Lista de ataques:
 				Chuva de flechas
 				Tiro certeiro
@@ -137,11 +137,11 @@ public class MenuView {
 
 	public static void loreArcanista() {
 		System.out.println("""
-				Os Arcanistas são uma ordem de magos que usam poderes místicos. Surgiram das sociedades 
-				antigas, que se dedicaram às pesquisas e ao estudo de magia. Com o tempo, esses estudiosos 
-				se tornaram capazes de controlar a energia mágica a seu favor, usando para realizar grandes 
+				Os Arcanistas são uma ordem de magos que usam poderes místicos. Surgiram das sociedades
+				antigas, que se dedicaram às pesquisas e ao estudo de magia. Com o tempo, esses estudiosos
+				se tornaram capazes de controlar a energia mágica a seu favor, usando para realizar grandes
 				feitos e mudar o curso das coisas.
-				
+
 				Lista de ataques:
 				Orbe explosivo
 				Chuva de espadas arcana
@@ -152,7 +152,7 @@ public class MenuView {
 	public static void inicioJornada() {
 
 		impressaoLentaPorCaracter("""
-				Você acorda com fortes dores pelo corpo e cabeça, e não se lembra de nada, só carregando as 
+				acorda com fortes dores pelo corpo e cabeça, e não se lembra de nada, só carregando as
 				roupas do corpo, e olhando ao redor, tudo o que vê são destroços e poças de sangue.
 				Andando por aquelas ruínas, se depara com uma abertura no chão:
 				""");
@@ -215,6 +215,41 @@ public class MenuView {
 				|________________________________________________|
 				Escolha uma das opções: """;
 		System.out.print(ANSI_RED + menuEscolha3);
+	}
+
+	public static void voceEstaMorto() {
+		String morreu = """
+				 Você morreu porque caiu na armadilha!!
+
+				 _________________________________________________
+				|                                                |
+				|                                                |
+				|                                                |
+				|                                                |
+				|          	   💀 VOCE ESTA MORTO 💀              |
+				|                                                |
+				|                                                |
+				|                                              	 |
+				|                                                |
+				|________________________________________________|
+				""";
+		System.out.println(ANSI_RED + morreu);
+
+	}
+
+	public static void continuacao2() {
+		impressaoLentaPorCaracter ("""
+				…ignorando a abertura, continua a explorar a cidade para encontrar itens
+				de sobrevivência como comida e água, e para entender o que aconteceu
+				durante seu apagão.
+				Entra numa taverna, e lá consegue informações sobre o ocorrido,
+				mas ainda sem muito sucesso, continua a caminhar para o outro lado da vila,
+				se depara com goblins saqueadores, e começa uma luta 
+				Vasculhando o corpo do goblin acha uma espécie de mapa.
+				Seguindo-o você se depara com uma caverna, e encontra um portão de metal
+				e uma pilha de armamentos que de algum modo eram perfeitos para seu personagem
+					""");
+		
 	}
 
 	public static void impressaoLentaPorCaracter(String texto) {
