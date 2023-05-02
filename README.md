@@ -10,7 +10,7 @@ Esse repositório tem como objetivo desenvolver em equipe um projeto desafiador 
 **Desenvolvedores:**
 *[Ana Rosa](https://github.com/hyarmen)
 *[Felipe Sousa](https://github.com/FelipeSdsilva)
-*Pedro Campos -
+*[Pedro Campos](https://github.com/Camposphc)
 *[Ricardo Marinho](https://github.com/ricocezar)
 *[Roger Ramos](https://github.com/custicol)
 *[Sofia Marchetti](https://github.com/sofiamarchetti)
