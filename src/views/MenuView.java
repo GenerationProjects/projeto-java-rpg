@@ -1,5 +1,6 @@
 package views;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class MenuView {
@@ -152,7 +153,7 @@ public class MenuView {
 	public static void inicioJornada() {
 
 		impressaoLentaPorCaracter("""
-				acorda com fortes dores pelo corpo e cabeça, e não se lembra de nada, só carregando as
+				 acorda com fortes dores pelo corpo e cabeça, e não se lembra de nada, só carregando as
 				roupas do corpo, e olhando ao redor, tudo o que vê são destroços e poças de sangue.
 				Andando por aquelas ruínas, se depara com uma abertura no chão:
 				""");
@@ -226,7 +227,7 @@ public class MenuView {
 				|                                                |
 				|                                                |
 				|                                                |
-				|          	   💀 VOCE ESTA MORTO 💀              |
+				|          	   💀 VOCE ESTA MORTO 💀             |
 				|                                                |
 				|                                                |
 				|                                              	 |
@@ -239,17 +240,26 @@ public class MenuView {
 
 	public static void continuacao2() {
 		impressaoLentaPorCaracter ("""
-				…ignorando a abertura, continua a explorar a cidade para encontrar itens
+				…ignorando a abertura, você continua a explorar a cidade para encontrar itens
 				de sobrevivência como comida e água, e para entender o que aconteceu
 				durante seu apagão.
-				Entra numa taverna, e lá consegue informações sobre o ocorrido,
-				mas ainda sem muito sucesso, continua a caminhar para o outro lado da vila,
-				se depara com goblins saqueadores, e começa uma luta 
-				Vasculhando o corpo do goblin acha uma espécie de mapa.
-				Seguindo-o você se depara com uma caverna, e encontra um portão de metal
-				e uma pilha de armamentos que de algum modo eram perfeitos para seu personagem
+				
+				Você entra em uma taverna e lá consegue informações sobre o ocorrido,
+				mas ainda sem recuperar suas lembranças continua a caminhar para o outro lado da vila e
+				se depara com goblins saqueadores.
+				
+				Começa uma luta
 					""");
-		
+	}
+
+	public static void keyPress() {
+
+		try {
+			System.out.println(ANSI_BLUE + "\nPressione Enter para rolar os dados...");
+			System.in.read();
+		} catch (IOException e) {
+			System.out.println("Você pressionou uma tecla diferente de enter!");
+		}
 	}
 
 	public static void impressaoLentaPorCaracter(String texto) {

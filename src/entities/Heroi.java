@@ -1,7 +1,5 @@
 package entities;
 
-import repository.HeroiRepository;
-
 public class Heroi {
 
 	private String nome;
@@ -56,13 +54,5 @@ public class Heroi {
 
 	public void setRaca(String raca) {
 		this.raca = raca;
-	}
-
-	public int atacar() {
-		return 0;
-	}
-
-	public int defender() {
-		return 0;
 	}
 }

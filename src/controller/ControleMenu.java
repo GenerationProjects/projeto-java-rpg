@@ -3,7 +3,6 @@ package controller;
 import entities.Arcano;
 import entities.Cacador;
 import entities.Guerreiro;
-import entities.Heroi;
 
 import java.util.InputMismatchException;
 import java.util.Random;
@@ -32,14 +31,14 @@ public class ControleMenu {
 			}
 
 			switch (op) {
-			case 1 -> iniciarJogo();
-			case 2 -> iniciarJogo();
-			case 3 -> iniciarJogo();
-			default -> {
-				System.out.println("Opção inválida! Vamos novamente...");
-				sc.nextLine();
-				op = 0;
-			}
+				case 1 -> iniciarJogo();
+				case 2 -> iniciarJogo();
+				case 3 -> iniciarJogo();
+				default -> {
+					System.out.println("Opção inválida! Vamos novamente...");
+					sc.nextLine();
+					op = 0;
+				}
 			}
 
 		}
@@ -67,13 +66,13 @@ public class ControleMenu {
 			}
 
 			switch (op) {
-			case 1 -> new ControleMenu().escolhaDoNomeERaca(sc, op);
-			case 2 -> new ControleMenu().escolhaDoNomeERaca(sc, op);
-			case 3 -> new ControleMenu().escolhaDoNomeERaca(sc, op);
-			default -> {
-				System.out.println("Opção inválida! Vamos novamente...");
-				op = 0;
-			}
+				case 1 -> new ControleMenu().escolhaDoNomeERaca(sc, op);
+				case 2 -> new ControleMenu().escolhaDoNomeERaca(sc, op);
+				case 3 -> new ControleMenu().escolhaDoNomeERaca(sc, op);
+				default -> {
+					System.out.println("Opção inválida! Vamos novamente...");
+					op = 0;
+				}
 			}
 		}
 	}
@@ -92,81 +91,81 @@ public class ControleMenu {
 		int conf = 0;
 
 		switch (op) {
-		case 1 -> {
-			loreGuerreiro();
-			while (conf == 0) {
-				System.out.println("""
+			case 1 -> {
+				loreGuerreiro();
+				while (conf == 0) {
+					System.out.println("""
 						Deseja confirmar?
 						1 - Sim.
 						2 - Escolher outra classe.
 						""");
-				try {
-					conf = sc.nextInt();
-					sc.nextLine();
-				} catch (InputMismatchException e) {
-					System.out.println("\nConfirme ou escolha outra classe para continuar...");
-					sc.nextLine();
-					conf = 0;
+					try {
+						conf = sc.nextInt();
+						sc.nextLine();
+					} catch (InputMismatchException e) {
+						System.out.println("\nConfirme ou escolha outra classe para continuar...");
+						sc.nextLine();
+						conf = 0;
+					}
+					if (conf > 2 || conf < 0) {
+						System.out.println("Opção inválida, vamos de novo!");
+						conf = 0;
+					}
 				}
-				if (conf > 2 || conf < 0) {
-					System.out.println("Opção inválida, vamos de novo!");
-					conf = 0;
+				if (conf == 2) {
+					condicaoDeClasse();
 				}
 			}
-			if (conf == 2) {
-				condicaoDeClasse();
-			}
-		}
-		case 2 -> {
-			loreArcanista();
-			while (conf == 0) {
-				System.out.println("""
+			case 2 -> {
+				loreArcanista();
+				while (conf == 0) {
+					System.out.println("""
 						Deseja confirmar?
 						1 - Sim.
 						2 - Escolher outra classe.
 						""");
-				try {
-					conf = sc.nextInt();
-					sc.nextLine();
-				} catch (InputMismatchException e) {
-					System.out.println("\nConfirme ou escolha outra classe para continuar...");
-					sc.nextLine();
-					conf = 0;
+					try {
+						conf = sc.nextInt();
+						sc.nextLine();
+					} catch (InputMismatchException e) {
+						System.out.println("\nConfirme ou escolha outra classe para continuar...");
+						sc.nextLine();
+						conf = 0;
+					}
+					if (conf > 2 || conf < 0) {
+						System.out.println("Opção inválida, vamos de novo!");
+						conf = 0;
+					}
 				}
-				if (conf > 2 || conf < 0) {
-					System.out.println("Opção inválida, vamos de novo!");
-					conf = 0;
+				if (conf == 2) {
+					condicaoDeClasse();
 				}
 			}
-			if (conf == 2) {
-				condicaoDeClasse();
-			}
-		}
-		case 3 -> {
-			loreCacador();
-			while (conf == 0) {
-				System.out.println("""
+			case 3 -> {
+				loreCacador();
+				while (conf == 0) {
+					System.out.println("""
 						Deseja confirmar?
 						1 - Sim.
 						2 - Escolher outra classe.
 						""");
-				try {
-					conf = sc.nextInt();
-					sc.nextLine();
-				} catch (InputMismatchException e) {
-					System.out.println("\nConfirme ou escolha outra classe para continuar...");
-					sc.nextLine();
-					conf = 0;
+					try {
+						conf = sc.nextInt();
+						sc.nextLine();
+					} catch (InputMismatchException e) {
+						System.out.println("\nConfirme ou escolha outra classe para continuar...");
+						sc.nextLine();
+						conf = 0;
+					}
+					if (conf > 2 || conf < 0) {
+						System.out.println("Opção inválida, vamos de novo!");
+						conf = 0;
+					}
 				}
-				if (conf > 2 || conf < 0) {
-					System.out.println("Opção inválida, vamos de novo!");
-					conf = 0;
+				if (conf == 2) {
+					condicaoDeClasse();
 				}
 			}
-			if (conf == 2) {
-				condicaoDeClasse();
-			}
-		}
 		}
 
 		System.out.print("Escolha seu nome: ");
@@ -177,29 +176,6 @@ public class ControleMenu {
 
 		esc = sc.nextInt();
 		sc.nextLine();
-
-		while (esc == 0) {
-			System.out.println("""
-					Deseja confirmar?
-					1 - Sim.
-					2 - Escolher outra raça.
-					""");
-			try {
-				esc = sc.nextInt();
-				sc.nextLine();
-			} catch (InputMismatchException e) {
-				System.out.println("\nConfirme ou escolha outra classe para continuar...");
-				sc.nextLine();
-				esc = 0;
-			}
-			if (esc > 2 || esc < 0) {
-				System.out.println("Opção inválida, vamos de novo!");
-				esc = 0;
-			}
-		}
-		if (esc == 2) {
-			escolhaDeRaca();
-		}
 
 		raca = (esc == 1) ? "Humano" : (esc == 2) ? "Orc" : "Elfo";
 
@@ -212,7 +188,7 @@ public class ControleMenu {
 
 		heroi.adicionarHeroi((op == 1) ? new Guerreiro(nome, 2000, altura, genero, raca)
 				: (op == 2) ? new Arcano(nome, 1000, altura, genero, raca)
-						: new Cacador(nome, 1500, altura, genero, raca));
+				: new Cacador(nome, 1500, altura, genero, raca));
 		continuacao();
 
 	}
@@ -228,11 +204,17 @@ public class ControleMenu {
 
 		if (op == 1) {
 			voceEstaMorto();
-			
+
 		}else {
 			continuacao2();
 		}
 
-	}
+		int hpMonstroGoblins = 5000;
+		do {
+			keyPress();
+			hpMonstroGoblins -= heroi.atacar(rolarDados());
+		} while (hpMonstroGoblins > 0);
+
+		}
 
 }
