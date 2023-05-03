@@ -11,14 +11,18 @@ import java.util.Scanner;
 import static views.MenuView.*;
 
 public class ControleMenu {
+
 	Scanner sc = new Scanner(System.in);
+
 
 	ControllerHeroi heroi = new ControllerHeroi();
 
 	public static void controleInicial() {
 
-		Scanner sc = new Scanner(System.in);
+
+       		Scanner sc = new Scanner(System.in);
 		int op = 0;
+
 
 		introLore();
 
@@ -50,9 +54,11 @@ public class ControleMenu {
 		condicaoDeClasse();
 	}
 
+
 	public static void condicaoDeClasse() {
 		Scanner sc = new Scanner(System.in);
 		int op = 0;
+
 
 		while (op == 0) {
 			escolhaDeClasse();
@@ -82,7 +88,9 @@ public class ControleMenu {
 		return new Random().nextInt(1, 20);
 	}
 
+
 	public void escolhaDoNomeERaca(Scanner sc, int op) {
+
 
 		String nome, raca, tipoClasse = (op == 1) ? "Guerreiro" : (op == 2) ? "Arcano" : "Caçador", genero;
 		float altura;
@@ -186,6 +194,7 @@ public class ControleMenu {
 		sc.nextLine();
 
 		genero = (esc == 1) ? "Masculino" : "Feminino";
+
 
 		heroi.adicionarHeroi((op == 1) ? new Guerreiro(nome, 2000, altura, genero, raca)
 				: (op == 2) ? new Arcano(nome, 1000, altura, genero, raca)
@@ -312,12 +321,38 @@ public class ControleMenu {
 	}
 
 	private void terceiraPartedaHistoria() {
-		continuacao4();
+		continuacao5();
+		int hpZumbi = 10000;
+		int hpHeroi = heroi.hpHeroi;
+		int vez = 0;
+		do {
+			if (vez % 2 == 0) {
+				System.out.println("\nAgora é hora de Atacar!");
+				keyPress(vez);
+				hpZumbi -= heroi.atacar(rolarDados());
+
+			} else {
+				System.out.println("\nAgora é hora de se defender!");
+				keyPress(vez);
+				hpHeroi -= heroi.defender(rolarDados());
+			}
+			vez++;
+		} while (hpHeroi > 0 && hpZumbi > 0);
+
+		if (hpZumbi <= 0) {
+			System.out.println("\nVocê dizimou a orda de zumbi!!!");
+			terceiraPartedaHistoria();
+		} else if (hpHeroi < 0) {
+			System.out.println("\nVocê foi devorado pelos zumbis!!!");
+			terminarJogo();
+		}
 		
 	}
+	
 
 	public static void terminarJogo() {
 		voceEstaMorto();
 	}
 
 }
+
