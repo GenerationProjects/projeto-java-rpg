@@ -31,18 +31,18 @@ public class ControllerHeroi implements HeroiRepository {
 			System.out.println("O monstro se defendeu!");
 			return 0;
 		} else if (dado > 1 && dado < 7) {
-			System.out.println("O seu ataque quase não deu dano e o goblin riu da sua cara!");
+			System.out.println("O seu ataque quase não deu dano e o monstro riu da sua cara!");
 			return 1000;
 		} else if (dado > 7 && dado < 20) {
-			System.out.println("O seu ataque deu bastante dano, mas não matou o goblin, o que o deixou enfurecido!");
+			System.out.println("O seu ataque deu bastante dano, mas não matou o monstro, o que o deixou enfurecido!");
 			return 3000;
 		} else if (dado == 20) {
-			System.out.println("O seu ataque foi tão forte que matou o goblin na hora!");
+			System.out.println("O seu ataque foi tão forte que matou o monstro na hora!");
 			return 5000;
 		}
 		return dado;
 	}
-	
+
 	@Override
 	public int defender(int dado) {
 		if (dado == 1) {
@@ -52,7 +52,7 @@ public class ControllerHeroi implements HeroiRepository {
 			System.out.println("Você tomou bastante dano, mas não morreu!");
 			return 900;
 		} else if (dado > 7 && dado < 20) {
-			System.out.println("Você quase não tomou dano e riu da cara do goblin!");
+			System.out.println("Você quase não tomou dano e riu da cara do monstro!");
 			return 300;
 		} else if (dado == 20) {
 			System.out.println("A sua defesa foi tão boa que você não levou dano!");
@@ -61,4 +61,9 @@ public class ControllerHeroi implements HeroiRepository {
 		return dado;
 	}
 
+	public void recuperarHP() {
+		for (Heroi heroi : herois) {
+			heroi.setHp(2000);
+		}
+	}
 }
