@@ -113,7 +113,7 @@ public class MenuView {
 
 	public static void loreGuerreiro() {
 		System.out.println("""
-    
+
 				Os Guerreiros são os mais fortes do reino. A origem dos guerreiros é obscura, mas muitos
 				acreditam que ela surgiu em resposta às constantes guerras e conflitos que assolavam as
 				terras. Em tempos de paz, serviam como protetores dos reinos, patrulhando fronteiras e
@@ -123,12 +123,13 @@ public class MenuView {
 				Golpe supurante
 				Corte profundo
 				Apunhalada
-				
+
 				""");
 	}
 
 	public static void loreCacador() {
 		System.out.println("""
+    
 				Os Caçadores são combatentes treinados para o longo alcance. A origem é incerta, mas muitos
 				acreditam que eles surgiram entre os povos das florestas, que dependiam da caça para sobreviver.
 				Com o tempo se tornaram lutadores habilidosos, capazes de atirar flechas com precisão mortal.
@@ -162,7 +163,7 @@ public class MenuView {
 	public static void inicioJornada() {
 
 		impressaoLentaPorCaracter("""
-     
+    
 				 acorda com fortes dores pelo corpo e cabeça, e não se lembra de nada, só carregando as
 				roupas do corpo, e olhando ao redor, tudo o que vê são destroços e poças de sangue.
 				Andando por aquelas ruínas, se depara com uma abertura no chão:
