@@ -263,7 +263,7 @@ public class MenuView {
 	}
 	
 	public static void continuacao3() {
-		impressaoLentaPorCaracter (""" 
+		impressaoLentaPorCaracter ("""
 				
 				Vasculhando o corpo do goblin acha uma espécie de mapa. Seguindo-o você se 
 				depara com uma caverna, e encontra um portão de metal e uma pilha de armamentos 
