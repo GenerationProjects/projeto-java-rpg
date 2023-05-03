@@ -141,58 +141,34 @@ public class MenuView {
 	}
 
 	public static void loreCacador() {
-<<<<<<< HEAD
-		System.out.println("""		
-    
-				Caçador: Os Caçadores são  combatentes treinados para o longo alcance.
-				A origem é incerta, mas muitos acreditam que eles surgiram entre os povos das florestas,
-				que dependiam da caça para sobreviver. Com o tempo se tornaram lutadores habilidosos,
-				capazes de atirar flechas com precisão mortal.
-				
-=======
 		System.out.println("""
 				Os Caçadores são combatentes treinados para o longo alcance. A origem é incerta, mas muitos
 				acreditam que eles surgiram entre os povos das florestas, que dependiam da caça para sobreviver.
 				Com o tempo se tornaram lutadores habilidosos, capazes de atirar flechas com precisão mortal.
 
->>>>>>> main
+
 				Lista de ataques:
 				Chuva de flechas
 				Tiro certeiro
 				Flecha flamejante
-<<<<<<< HEAD
 				
-=======
->>>>>>> main
 				""");
 	}
 
 	public static void loreArcanista() {
 		System.out.println("""
-<<<<<<< HEAD
-    
-				Arcanista: Os Arcanistas são uma ordem de magos que usam de poderes místicos.
-				Surgiram das sociedades antigas, que se dedicaram a pesquisas e ao estudo de magia.
-				Com o tempo, esses estudiosos se tornaram capazes de controlar a energia mágica a seu prazer,
-				usando para realizar grandes feitos e mudar o curso das coisas.
-				
-=======
+
 				Os Arcanistas são uma ordem de magos que usam poderes místicos. Surgiram das sociedades
 				antigas, que se dedicaram às pesquisas e ao estudo de magia. Com o tempo, esses estudiosos
 				se tornaram capazes de controlar a energia mágica a seu favor, usando para realizar grandes
 				feitos e mudar o curso das coisas.
 
->>>>>>> main
+
 				Lista de ataques:
 				Orbe explosivo
 				Chuva de espadas arcana
 				Saraivada mágica
-<<<<<<< HEAD
-				
-				""");
-	}
 
-=======
 				""");
 	}
 
@@ -308,7 +284,7 @@ public class MenuView {
 		}
 	}
 
->>>>>>> main
+
 	public static void impressaoLentaPorCaracter(String texto) {
 		for (int i = 0; i < texto.length(); i++) {
 			char c = texto.charAt(i);
