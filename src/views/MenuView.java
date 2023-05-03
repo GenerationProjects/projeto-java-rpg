@@ -261,7 +261,72 @@ public class MenuView {
 				Começa uma luta
 					""");
 	}
-
+	
+	public static void continuacao3() {
+		impressaoLentaPorCaracter ("""
+				
+				Vasculhando o corpo do goblin acha uma espécie de mapa. Seguindo-o você se 
+				depara com uma caverna, e encontra um portão de metal e uma pilha de armamentos 
+				que de algum modo eram perfeitos para seu personagem:
+				""");
+	}
+	
+	public static void continuacao4() {
+		impressaoLentaPorCaracter ("""
+				
+				Seguindo sua jornada e ainda sem lembranças, você não vê opção a não ser seguir 
+				uma longa estrada, e ao longe avista o castelo do Rei Utric. Os habitantes te 
+				reconhecem, as memórias vão voltando aos poucos, e logo um velho sábio explica 
+				o ocorrido com a vila, onde a fúria de um Lich passou e ressuscitou os mortos 
+				que haviam pelo caminho.
+				
+				O rei te convoca e ordena que entre na expedição para a caçada ao Lich em direção
+				ao pantano de Breakwood. Em meio à viagem, o grupo formado por Ultric precisa 
+				atravessar a grande Floresta da Penumbra, que tem como guardião um grande ogro 
+				e um burro, e só aqueles com permissão dos dois podem passar.
+				""");
+	}
+	
+	public static void continuacao5() {
+		impressaoLentaPorCaracter ("""
+				
+				Passando pela floresta, o grupo avista o Forte do Lich em meio ao pântano 
+				repleto de zumbis protegendo o local, e a única opção é lutar contra esse 
+				exército. Os heróis se aproximam dos zumbis brandindo suas espadas com terminação.
+				""");
+	}
+	
+	public static void continuacao6() {
+		impressaoLentaPorCaracter ("""
+				...ataca o primeiro zumbi, acertando-o em cheio e destruindo-o. Em seguida, ele 
+				se prepara para o próximo ataque.
+				
+				Os zumbis avançam em direção aos heróis, com suas mãos e dentes em riste. Eles 
+				se dividem em dois grupos e os atacam derrubando e transformando 3 dos 10 do 
+				grupo.
+				
+				O Lich permanece no fundo da sala, observando a batalha com um sorriso malicioso. 
+				Ele conjura um raio de energia em direção aos heróis, derrubando a maioria deles,
+				 e sobrando apenas o rei Ultric e ().
+				 
+				Ali começa uma batalha do herói e do rei, que decidirá o futuro do reino contra o
+				 Lich.				 
+				""");
+	}
+	
+	public static void final1() {
+		impressaoLentaPorCaracter ("""
+				Ao fim da batalha, o Lich vai explicar os motivos, e culpa o rei por tudo o que 
+				aconteceu.		 
+				""");
+	}
+	
+	public static void final2() {
+		impressaoLentaPorCaracter ("""
+				XXXXXXXXX	 
+				""");
+	}
+	
 	public static void keyPress() {
 
 		try {

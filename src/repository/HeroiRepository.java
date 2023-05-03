@@ -8,5 +8,7 @@ public interface HeroiRepository {
     public String mostrarnome();
 
     public int atacar(int dano);
+    
+    public int defender(int defesa);
 
 }
