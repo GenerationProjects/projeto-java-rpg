@@ -22,6 +22,7 @@ public class MenuView {
 
 	public static void loreInicial() {
 		String inicio = """
+    
 				Em uma noite de comemoração de suas vitórias em campo de batalha, o rei Ultric convoca
 				seu bobo da corte para alegrar a festa com seus contos, e durante uma de suas histórias,
 				a rainha se sente insultada pelas palavras proferidas vindas do bobo. O rei observando a
@@ -31,6 +32,7 @@ public class MenuView {
 				A jornada se inicia em um pequeno vilarejo ao norte de Helmont, onde seu povoado estava se
 				destacando e caminhando para a independência, fugindo das mãos do rei Ultric. Com isso, houve
 				uma retaliação por parte do rei ao povo da Kocorico Village.
+				
 				""";
 		impressaoLentaPorCaracter(inicio);
 	}
@@ -41,11 +43,7 @@ public class MenuView {
 				 _________________________________________________
 				|                                                |
 				|          Bem Vindos ao Helmont Adventure       |
-<<<<<<< HEAD
-				|              Escolhas as opções                |
-=======
 				|              Escolha as opções                 |
->>>>>>> main
 				|                                                |
 				|                1 - Jogar                       |
 				|                2 - Claro                       |
@@ -115,33 +113,23 @@ public class MenuView {
 
 	public static void loreGuerreiro() {
 		System.out.println("""
-<<<<<<< HEAD
-       
-    			Guerreiro: Os Guerreiros são os mais fortes do reino.
-				A origem dos guerreiros é obscura, mas muitos acreditam que ela surgiu em resposta
-				às constantes guerras e conflitos que assolavam as terras. Em tempos de paz, serviam
-				como protetores dos reinos, patrulhando fronteiras e defendendo cidades contra invasores.
-				
-=======
+
 				Os Guerreiros são os mais fortes do reino. A origem dos guerreiros é obscura, mas muitos
 				acreditam que ela surgiu em resposta às constantes guerras e conflitos que assolavam as
 				terras. Em tempos de paz, serviam como protetores dos reinos, patrulhando fronteiras e
 				defendendo cidades contra invasores.
 
->>>>>>> main
 				Lista de ataques:
 				Golpe supurante
 				Corte profundo
 				Apunhalada
-<<<<<<< HEAD
-				
-=======
->>>>>>> main
+
 				""");
 	}
 
 	public static void loreCacador() {
 		System.out.println("""
+    
 				Os Caçadores são combatentes treinados para o longo alcance. A origem é incerta, mas muitos
 				acreditam que eles surgiram entre os povos das florestas, que dependiam da caça para sobreviver.
 				Com o tempo se tornaram lutadores habilidosos, capazes de atirar flechas com precisão mortal.
@@ -175,6 +163,7 @@ public class MenuView {
 	public static void inicioJornada() {
 
 		impressaoLentaPorCaracter("""
+    
 				 acorda com fortes dores pelo corpo e cabeça, e não se lembra de nada, só carregando as
 				roupas do corpo, e olhando ao redor, tudo o que vê são destroços e poças de sangue.
 				Andando por aquelas ruínas, se depara com uma abertura no chão:
@@ -262,6 +251,7 @@ public class MenuView {
 
 	public static void continuacao2() {
 		impressaoLentaPorCaracter ("""
+    
 				…ignorando a abertura, você continua a explorar a cidade para encontrar itens
 				de sobrevivência como comida e água, e para entender o que aconteceu
 				durante seu apagão.
