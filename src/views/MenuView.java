@@ -1,5 +1,6 @@
 package views;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class MenuView {
@@ -11,28 +12,25 @@ public class MenuView {
 		String intro = """
 				Terra média SÉC XIV.
 
-				Bem vindo ao reino de Helmont um mundo mágico repleto de montanhas congeladas
-				, planícies, pântanos obscuros e criaturas místicas, que é governado pelo
-				Rei Calander Ultric.
+				Bem-vindo ao reino de Helmont: um mundo mágico repleto de montanhas congeladas,
+				planícies, pântanos obscuros e criaturas místicas, governado pelo rei Calander Ultric,
+				que tem punhos fortes, é ambicioso e dominador. Casado com a rainha Nefereti Belmond,
+				tem três filhos: Nagiel, Aquio e Estrid.
 				""";
 		impressaoLentaPorCaracter(intro);
 	}
 
 	public static void loreInicial() {
 		String inicio = """
+				Em uma noite de comemoração de suas vitórias em campo de batalha, o rei Ultric convoca
+				seu bobo da corte para alegrar a festa com seus contos, e durante uma de suas histórias,
+				a rainha se sente insultada pelas palavras proferidas vindas do bobo. O rei observando a
+				cena, para preservar a honra de sua rainha, ordena que matem o responsável pelas histórias,
+				e jogue seus restos no pântano de Breakwood.
 
-				Ultric era um Rei que governava com punhos fortes, ambicioso e dominador,
-				casado com a rainha Nefereti Belmond e seus 3 filhos, Nagiel, Aquio e Estrid.
-				Em uma noite de comemoração de suas vitórias em campo de batalha, o rei Ultric
-				convoca seu bobo da corte para alegrar a festa com seus contos. Em uma de suas
-				histórias a rainha se sente insultada pelas palavras proferidas vindas do bobo,
-				o rei observando aquilo e para preservar a honra de sua rainha, ordena que matem
-				o tal, e jogue seus restos no pântano de Breakwood.
-
-				A jornada se inicia em um pequeno vilarejo ao norte de Helmont, onde seu povoado
-				estava se destacando e caminhando para a independência, fugindo das mãos do rei
-				Ultric. Com isso houve uma retaliação por parte do rei ao povo da Kocorico Village.
-
+				A jornada se inicia em um pequeno vilarejo ao norte de Helmont, onde seu povoado estava se
+				destacando e caminhando para a independência, fugindo das mãos do rei Ultric. Com isso, houve
+				uma retaliação por parte do rei ao povo da Kocorico Village.
 				""";
 		impressaoLentaPorCaracter(inicio);
 	}
@@ -43,7 +41,11 @@ public class MenuView {
 				 _________________________________________________
 				|                                                |
 				|          Bem Vindos ao Helmont Adventure       |
+<<<<<<< HEAD
 				|              Escolhas as opções                |
+=======
+				|              Escolha as opções                 |
+>>>>>>> main
 				|                                                |
 				|                1 - Jogar                       |
 				|                2 - Claro                       |
@@ -78,7 +80,7 @@ public class MenuView {
 
 				 _________________________________________________
 				|                                                |
-				|              Escolha a sua Raça                |
+				|              Escolha a sua raça                |
 				|                                                |
 				|                                                |
 				|                1 - Humano                      |
@@ -87,7 +89,7 @@ public class MenuView {
 				|                                                |
 				|                                                |
 				|________________________________________________|
-				Escolha uma Raça: """;
+				Escolha uma raça: """;
 		System.out.print(ANSI_RED + menuRacas);
 	}
 
@@ -96,7 +98,7 @@ public class MenuView {
 
 				 _________________________________________________
 				|                                                |
-				|              Escolha seu Gênero                |
+				|              Escolha seu gênero                |
 				|                                                |
 				|                                                |
 				|                                                |
@@ -106,28 +108,40 @@ public class MenuView {
 				|                                                |
 				|                                                |
 				|________________________________________________|
-				Escolha uma Genero: """;
+				Escolha um gênero: """;
 		System.out.print(ANSI_RED + menuGeneros);
 
 	}
 
 	public static void loreGuerreiro() {
 		System.out.println("""
+<<<<<<< HEAD
        
     			Guerreiro: Os Guerreiros são os mais fortes do reino.
 				A origem dos guerreiros é obscura, mas muitos acreditam que ela surgiu em resposta
 				às constantes guerras e conflitos que assolavam as terras. Em tempos de paz, serviam
 				como protetores dos reinos, patrulhando fronteiras e defendendo cidades contra invasores.
 				
+=======
+				Os Guerreiros são os mais fortes do reino. A origem dos guerreiros é obscura, mas muitos
+				acreditam que ela surgiu em resposta às constantes guerras e conflitos que assolavam as
+				terras. Em tempos de paz, serviam como protetores dos reinos, patrulhando fronteiras e
+				defendendo cidades contra invasores.
+
+>>>>>>> main
 				Lista de ataques:
 				Golpe supurante
 				Corte profundo
 				Apunhalada
+<<<<<<< HEAD
 				
+=======
+>>>>>>> main
 				""");
 	}
 
 	public static void loreCacador() {
+<<<<<<< HEAD
 		System.out.println("""		
     
 				Caçador: Os Caçadores são  combatentes treinados para o longo alcance.
@@ -135,30 +149,166 @@ public class MenuView {
 				que dependiam da caça para sobreviver. Com o tempo se tornaram lutadores habilidosos,
 				capazes de atirar flechas com precisão mortal.
 				
+=======
+		System.out.println("""
+				Os Caçadores são combatentes treinados para o longo alcance. A origem é incerta, mas muitos
+				acreditam que eles surgiram entre os povos das florestas, que dependiam da caça para sobreviver.
+				Com o tempo se tornaram lutadores habilidosos, capazes de atirar flechas com precisão mortal.
+
+>>>>>>> main
 				Lista de ataques:
 				Chuva de flechas
 				Tiro certeiro
 				Flecha flamejante
+<<<<<<< HEAD
 				
+=======
+>>>>>>> main
 				""");
 	}
 
 	public static void loreArcanista() {
 		System.out.println("""
+<<<<<<< HEAD
     
 				Arcanista: Os Arcanistas são uma ordem de magos que usam de poderes místicos.
 				Surgiram das sociedades antigas, que se dedicaram a pesquisas e ao estudo de magia.
 				Com o tempo, esses estudiosos se tornaram capazes de controlar a energia mágica a seu prazer,
 				usando para realizar grandes feitos e mudar o curso das coisas.
 				
+=======
+				Os Arcanistas são uma ordem de magos que usam poderes místicos. Surgiram das sociedades
+				antigas, que se dedicaram às pesquisas e ao estudo de magia. Com o tempo, esses estudiosos
+				se tornaram capazes de controlar a energia mágica a seu favor, usando para realizar grandes
+				feitos e mudar o curso das coisas.
+
+>>>>>>> main
 				Lista de ataques:
 				Orbe explosivo
 				Chuva de espadas arcana
 				Saraivada mágica
+<<<<<<< HEAD
 				
 				""");
 	}
 
+=======
+				""");
+	}
+
+	public static void inicioJornada() {
+
+		impressaoLentaPorCaracter("""
+				 acorda com fortes dores pelo corpo e cabeça, e não se lembra de nada, só carregando as
+				roupas do corpo, e olhando ao redor, tudo o que vê são destroços e poças de sangue.
+				Andando por aquelas ruínas, se depara com uma abertura no chão:
+				""");
+	}
+
+	public static void primeiraEscolha() {
+		String menuEscolha1 = """
+
+				 _________________________________________________
+				|                                                |
+				|                    Escolha                     |
+				|                                                |
+				|                                                |
+				|                                                |
+				|              1 - Entrar no buraco              |
+				|              2 - Continuar seu caminho         |
+				|                                                |
+				|                                                |
+				|                                                |
+				|________________________________________________|
+				Escolha uma das opções: """;
+		System.out.print(ANSI_RED + menuEscolha1);
+
+	}
+
+	public static void segundaEscolha() {
+		String menuEscolha2 = """
+
+				 _________________________________________________
+				|                                                |
+				|                    Escolha                     |
+				|                                                |
+				|                                                |
+				|                                                |
+				|          1 - Enfrentar e matar                 |
+				|          2 - Tentar convencer com argumentos   |
+				|                                                |
+				|                                                |
+				|                                                |
+				|________________________________________________|
+				Escolha uma das opções: """;
+		System.out.print(ANSI_RED + menuEscolha2);
+
+	}
+
+	public static void terceiraEscolha() {
+		String menuEscolha3 = """
+
+				 _________________________________________________
+				|                                                |
+				|                    Escolha                     |
+				|                                                |
+				|                                                |
+				|                                                |
+				|               1 - Poupar o lich                |
+				|               2 - Matar o lich                 |
+				|               3 - Matar o rei e o lich         |
+				|                                                |
+				|                                                |
+				|________________________________________________|
+				Escolha uma das opções: """;
+		System.out.print(ANSI_RED + menuEscolha3);
+	}
+
+	public static void voceEstaMorto() {
+		String morreu = """
+				 Você morreu porque caiu na armadilha!!
+
+				 _________________________________________________
+				|                                                |
+				|                                                |
+				|                                                |
+				|                                                |
+				|          	   💀 VOCE ESTA MORTO 💀             |
+				|                                                |
+				|                                                |
+				|                                              	 |
+				|                                                |
+				|________________________________________________|
+				""";
+		System.out.println(ANSI_RED + morreu);
+
+	}
+
+	public static void continuacao2() {
+		impressaoLentaPorCaracter ("""
+				…ignorando a abertura, você continua a explorar a cidade para encontrar itens
+				de sobrevivência como comida e água, e para entender o que aconteceu
+				durante seu apagão.
+				
+				Você entra em uma taverna e lá consegue informações sobre o ocorrido,
+				mas ainda sem recuperar suas lembranças continua a caminhar para o outro lado da vila e
+				se depara com goblins saqueadores.
+				
+				Começa uma luta
+					""");
+	}
+
+	public static void keyPress() {
+
+		try {
+			System.out.println(ANSI_BLUE + "\nPressione Enter para rolar os dados...");
+			System.in.read();
+		} catch (IOException e) {
+			System.out.println("Você pressionou uma tecla diferente de enter!");
+		}
+	}
+
+>>>>>>> main
 	public static void impressaoLentaPorCaracter(String texto) {
 		for (int i = 0; i < texto.length(); i++) {
 			char c = texto.charAt(i);
@@ -169,7 +319,5 @@ public class MenuView {
 
 			}
 		}
-
 	}
-
 }
