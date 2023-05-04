@@ -47,7 +47,7 @@ public class HistoriaView {
                 Orbe explosivo
                 Chuva de espadas arcana
                 Saraivada mágica
-                
+
                 """);
     }
 
@@ -57,7 +57,7 @@ public class HistoriaView {
                  acorda com fortes dores pelo corpo e cabeça, e não se lembra de nada, só carregando as
                 roupas do corpo, e olhando ao redor, tudo o que vê são destroços e poças de sangue.
                 Andando por aquelas ruínas, se depara com uma abertura no chão:
-                
+
                 """);
     }
 
@@ -175,7 +175,6 @@ public class HistoriaView {
                 O herói poupa o lich e juntos levam o reino de Helmont ao caos, agora dominado por cadáveres.
                 
                 FIM!
-                                
                 """);
     }
 
