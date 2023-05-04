@@ -8,17 +8,15 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
+import static views.HistoriaView.*;
 import static views.MenuView.*;
 
 public class ControleMenu {
 
     Scanner sc = new Scanner(System.in);
-
-
     ControllerHeroi heroi = new ControllerHeroi();
 
     public static void controleInicial() {
-
 
         Scanner sc = new Scanner(System.in);
         int op = 0;
@@ -199,52 +197,53 @@ public class ControleMenu {
         heroi.adicionarHeroi((op == 1) ? new Guerreiro(nome, 2000, altura, genero, raca)
                 : (op == 2) ? new Arcano(nome, 1000, altura, genero, raca)
                 : new Cacador(nome, 1500, altura, genero, raca));
-        continuacao();
+        primeiraPartedaHistoria();
 
     }
 
-    public void continuacao() {
+    public void primeiraPartedaHistoria() {
 
         impressaoLentaPorCaracter(heroi.mostrarnome());
         inicioJornada();
         int op;
-        Scanner sc = new Scanner(System.in);
 
         primeiraEscolha();
         op = sc.nextInt();
 
         if (op == 1) {
-            voceEstaMorto();
+
+            System.out.println("Você foi explorar o buraco e acabou caindo em uma armadilha!!!!");
+            terminarJogo();
+
 
         } else {
             continuacao2();
-        }
+            int hpMonstroGoblins = 5000;
+            int hpHeroi = heroi.hpHeroi;
+            int vez = 0;
+            do {
+                if (vez % 2 == 0) {
+                    System.out.println("\nAgora é hora de Atacar!");
 
-        int hpMonstroGoblins = 5000;
-        int hpHeroi = heroi.hpHeroi;
-        int vez = 0;
-        do {
-            if (vez % 2 == 0) {
-                System.out.println("\nAgora é hora de Atacar!");
-                keyPress(vez);
-                hpMonstroGoblins -= heroi.atacar(rolarDados());
+                    keyPress(vez);
+                    hpMonstroGoblins -= heroi.atacar(rolarDados());
 
-            } else {
-                System.out.println("\nAgora é hora de se defender!");
-                keyPress(vez);
-                hpHeroi -= heroi.defender(rolarDados());
+                } else {
+                    System.out.println("\nAgora é hora de se defender!");
+                    keyPress(vez);
+                    hpHeroi -= heroi.defender(rolarDados());
+                }
+                vez++;
+            } while (hpHeroi > 0 && hpMonstroGoblins > 0);
+
+            if (hpMonstroGoblins <= 0) {
+                System.out.println("\nVocê matou os goblins saqueadores!!!");
+                segundaPartedaHistoria();
+            } else if (hpHeroi < 0) {
+                System.out.println("\nVocê foi morto pelos goblins saqueadores!!!");
+                terminarJogo();
             }
-            vez++;
-        } while (hpHeroi > 0 && hpMonstroGoblins > 0);
-
-        if (hpMonstroGoblins <= 0) {
-            System.out.println("\nVocê matou os goblis saqueadores!!!");
-            segundaPartedaHistoria();
-        } else if (hpHeroi < 0) {
-            System.out.println("\nVocê foi morto pelos goblins saqueadores!!!");
-            terminarJogo();
         }
-
     }
 
     public void segundaPartedaHistoria() {
@@ -288,6 +287,7 @@ public class ControleMenu {
                 int i = rolarDados();
                 if (i <= 5) {
                     System.out.println("Seus argumentos foram convincentes e o ogro deixou vocês passarem");
+                    terceiraPartedaHistoria();
                 } else {
                     System.out.println("O ogro se irritou: Você entrou no meu pântano!!");
                     vez = 0;
@@ -339,7 +339,7 @@ public class ControleMenu {
 
         if (hpZumbi <= 0) {
             System.out.println("\nVocê dizimou a orda de zumbi!!!");
-            terceiraPartedaHistoria();
+            quartaPartedaHistoria();
         } else if (hpHeroi < 0) {
             System.out.println("\nVocê foi devorado pelos zumbis!!!");
             terminarJogo();
@@ -347,9 +347,75 @@ public class ControleMenu {
 
     }
 
+    public void quartaPartedaHistoria() {
+        continuacao6();
+        impressaoLentaPorCaracter(heroi.mostrarnome());
+        continuacao6_2();
+
+        int hpLich = 15000;
+        int hpHeroi = heroi.hpHeroi;
+        int vez = 0;
+        do {
+            System.out.println("Vamos para a batalha final!!!! ");
+            if (vez % 2 == 0) {
+                System.out.println("\nAgora é hora de Atacar!");
+                keyPress(vez);
+                hpLich -= heroi.atacar(rolarDados());
+
+            } else {
+                System.out.println("\nAgora é hora de se defender!");
+                keyPress(vez);
+                hpHeroi -= heroi.defender(rolarDados());
+            }
+            vez++;
+        } while (hpHeroi > 0 && hpLich > 0);
+
+        if (hpLich <= 0) {
+            System.out.println("\nVocê nocauteou o Lich!!!");
+            quartaPartedaHistoria();
+        } else if (hpHeroi < 0) {
+            System.out.println("\nVocê foi transformado zumbi!!!");
+            terminarJogo();
+        }
+
+        terceiraEscolha();
+        int op = sc.nextInt();
+        switch (op) {
+            case 1 -> {
+                impressaoLentaPorCaracter(heroi.mostrarnome());
+
+                impressaoLentaPorCaracter("""
+                                                
+                        Se você ficar ao meu lado terá que matar o Rei para construir um mundo melhor
+                        na escuridão.
+                        """);
+                terminarJogo();
+            }
+            case 2 -> {
+                impressaoLentaPorCaracter(heroi.mostrarnome());
+
+                impressaoLentaPorCaracter("""
+                                                
+                        Você fez uma boa escolha nobre guerreiro será promovido a mão do rei.
+                        """);
+                terminarJogo();
+            }
+            case 3 -> {
+                impressaoLentaPorCaracter(heroi.mostrarnome());
+
+                impressaoLentaPorCaracter("""
+                                                
+                        """);
+                terminarJogo();
+            }
+        }
+
+    }
+
 
     public static void terminarJogo() {
         voceEstaMorto();
+        creditos();
     }
 
 
