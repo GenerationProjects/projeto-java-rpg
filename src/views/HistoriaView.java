@@ -135,10 +135,47 @@ public class HistoriaView {
                   """);
     }
 
-    public static void final1() {
+    public static void continuacao7() {
         impressaoLentaPorCaracter("""
-                Ao fim da batalha, o Lich vai explicar os motivos, e culpa o rei por tudo o que
-                aconteceu.
+                
+                Ao fim da batalha, o lich se ajoelha com ódio em seus olhos, culpando o rei de todo
+                o mal que acontece nas terra de Helmont, ele então olha para o herói, e com uma magia
+                o faz ter visões de tudo que o lich passou e presenciou durante anos servindo a Coroa
+                como bobo da corte, e como foi morto brutalmente por uma simples piada, o lich conta ao
+                herói sobre os planos do rei contra os povos mais pobres do reino.
+                
+                Você fica pasmo com as visões e com o impacto que a magia teve em seu cérebro e recupera
+                todas suas memórias. Ultric fica enfurecido e começa a gritar e dizer para o herói não cair
+                nas manipulações do lich e o finalizar ele logo.
+                
+                Você se lembra da chacina que os soldados do rei fizeram na vila de Breakwood e sem pensar
+                duas vezes ataca o rei Ultric o matando na mesma hora. O lich solta uma gargalhada e diz
+                que esperou a vida toda por isso.
+                
+                """);
+    }
+
+    public static void continuacao7_1() {
+        impressaoLentaPorCaracter("""
+                
+                O herói mata o lich porque, mesmo sendo grande parte culpa do rei, o bobo da corte também
+                matou pessoas inocentes em busca de sua vingança. Ao morrer, o lich entoa uma magia em uma
+                língua desconhecida te amaldiçoando, que acaba caindo, agonizando em dor.
+                
+                Estrid, o filho mais velho e sucessor à coroa, passa a governar o reino substituindo seu pai.
+                
+                FIM!
+                
+                """);
+    }
+
+    public static void continuacao7_2() {
+        impressaoLentaPorCaracter("""
+                                
+                O herói poupa o lich e juntos levam o reino de Helmont ao caos, agora dominado por cadáveres.
+                
+                FIM!
+                                
                 """);
     }
 

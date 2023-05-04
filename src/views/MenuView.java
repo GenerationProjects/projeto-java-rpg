@@ -166,7 +166,7 @@ public class MenuView {
                 |                                                |
                 |              1 - Poupar o lich                 |
                 |              2 - Matar o lich                  |
-                |              3 - Matar o rei e o lich          |
+                |                                                |
                 |                                                |
                 |                                                |
                 |                                                |

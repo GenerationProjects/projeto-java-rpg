@@ -180,7 +180,14 @@ public class ControleMenu {
         impressaoLentaPorCaracter("Que nome peculiar...");
 
         System.out.print("\n\nDigite sua altura: ");
-        altura = sc.nextFloat();
+
+        try {
+            altura = sc.nextFloat();
+            sc.nextLine();
+        } catch (InputMismatchException e) {
+            impressaoLentaPorCaracter("\nPor não estar de acordo com a nossa política você será punido... vamos te atribuir a altura de um anão.");
+            altura = 1.30f;
+        }
 
         escolhaDeRaca();
         try {
@@ -221,15 +228,15 @@ public class ControleMenu {
 
         impressaoLentaPorCaracter("\n\n"+heroi.mostrarnome());
         inicioJornada();
-        int op;
+        int op1;
 
         primeiraEscolha();
-        op = sc.nextInt();
+        op1 = sc.nextInt();
 
-        if (op == 1) {
+        if (op1 == 1) {
 
             System.out.println("Você foi explorar o buraco e acabou caindo em uma armadilha!!!!");
-            terminarJogo();
+            terminarJogoPorMorte();
 
 
         } else {
@@ -257,7 +264,7 @@ public class ControleMenu {
                 segundaPartedaHistoria();
             } else if (hpHeroi < 0) {
                 System.out.println("\nVocê foi morto pelos goblins saqueadores!!!");
-                terminarJogo();
+                terminarJogoPorMorte();
             }
         }
     }
@@ -269,14 +276,13 @@ public class ControleMenu {
 
         continuacao4();
         segundaEscolha();
-        int op = sc.nextInt();
+        int op2 = sc.nextInt();
         int hpOgro = 7000;
         int hpHeroi = heroi.hpHeroi;
+        int vez = 0;
 
-
-        switch (op) {
+        switch (op2) {
             case 1:
-                int vez = 0;
                 do {
                     if (vez % 2 == 0) {
                         System.out.println("\nAgora é hora de Atacar!");
@@ -296,7 +302,7 @@ public class ControleMenu {
                     terceiraPartedaHistoria();
                 } else if (hpHeroi < 0) {
                     System.out.println("\nVocê foi esmagado pelo ogro!!!");
-                    terminarJogo();
+                    terminarJogoPorMorte();
                 }
                 break;
             case 2:
@@ -306,7 +312,7 @@ public class ControleMenu {
                     terceiraPartedaHistoria();
                 } else {
                     System.out.println("\n\nVocê não deu sorte e o ogro se irritou: 'Você entrou no meu pântano!!'");
-                    vez = 0;
+
                     do {
                         if (vez % 2 == 0) {
                             System.out.println("\nAgora é hora de Atacar!");
@@ -326,7 +332,7 @@ public class ControleMenu {
                         terceiraPartedaHistoria();
                     } else if (hpHeroi < 0) {
                         System.out.println("\nVocê foi esmagado pelo ogro!!!");
-                        terminarJogo();
+                        terminarJogoPorMorte();
                     }
                     break;
                 }
@@ -358,7 +364,7 @@ public class ControleMenu {
             quartaPartedaHistoria();
         } else if (hpHeroi < 0) {
             System.out.println("\nVocê foi devorado pelos zumbis!!!");
-            terminarJogo();
+            terminarJogoPorMorte();
         }
 
     }
@@ -388,54 +394,42 @@ public class ControleMenu {
 
         if (hpLich <= 0) {
             System.out.println("\nVocê nocauteou o Lich!!!");
-            quartaPartedaHistoria();
+            continuacao7();
+            int op3 = 0;
+
+            while (op3 == 0) {
+                terceiraEscolha();
+                try {
+                    op3 = sc.nextInt();
+                    sc.nextLine();
+                } catch (InputMismatchException e) {
+                    impressaoLentaPorCaracter("\nOpção inválida... escolha novamente.");
+                    op3 = 0;
+                }
+
+                if (op3 == 1) {
+                    continuacao7_1();
+                    terminarJogoPorMorte();
+                } else {
+                    continuacao7_2();
+                    terminarJogo();
+                }
+            }
         } else if (hpHeroi < 0) {
             System.out.println("\nVocê foi transformado zumbi!!!");
-            terminarJogo();
+            terminarJogoPorMorte();
         }
-
-        terceiraEscolha();
-        int op = sc.nextInt();
-        switch (op) {
-            case 1 -> {
-                impressaoLentaPorCaracter(heroi.mostrarnome());
-
-                impressaoLentaPorCaracter("""
-                                                
-                        Se você ficar ao meu lado terá que matar o Rei para construir um mundo melhor
-                        na escuridão.
-                        
-                        """);
-                terminarJogo();
-            }
-            case 2 -> {
-                impressaoLentaPorCaracter(heroi.mostrarnome());
-
-                impressaoLentaPorCaracter("""
-                        
-                        Parabéns nobre guerreiro! Você fez uma escolha sábia e será promovido a mão do rei.
-                        
-                        """);
-                terminarJogo();
-            }
-            case 3 -> {
-                impressaoLentaPorCaracter(heroi.mostrarnome());
-
-                impressaoLentaPorCaracter("""
-                                                
-                        """);
-                terminarJogo();
-            }
-        }
-
     }
 
 
-    public static void terminarJogo() {
+    public static void terminarJogoPorMorte() {
         voceEstaMorto();
         creditos();
     }
 
+    public static void terminarJogo() {
+        creditos();
+    }
 
 }
 
