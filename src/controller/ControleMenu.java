@@ -262,7 +262,7 @@ public class ControleMenu {
             if (hpMonstroGoblins <= 0) {
                 System.out.println("\nVocê matou os goblins saqueadores!!!");
                 segundaPartedaHistoria();
-            } else if (hpHeroi < 0) {
+            } else if (hpHeroi <= 0) {
                 System.out.println("\nVocê foi morto pelos goblins saqueadores!!!");
                 terminarJogoPorMorte();
             }
@@ -288,7 +288,6 @@ public class ControleMenu {
             op03 = 2;
         }
 
-
         switch (op03) {
             case 1:
                 do {
@@ -308,7 +307,7 @@ public class ControleMenu {
                 if (hpOgro <= 0) {
                     System.out.println("\nVocê matou o ogro e o burro monta num dragão e foge!!!");
                     terceiraPartedaHistoria();
-                } else if (hpHeroi < 0) {
+                } else if (hpHeroi <= 0) {
                     System.out.println("\nVocê foi esmagado pelo ogro!!!");
                     terminarJogoPorMorte();
                 }
@@ -339,7 +338,7 @@ public class ControleMenu {
                     if (hpOgro <= 0) {
                         System.out.println("\nVocê matou o ogro e o burro monta num dragão e foge!!!");
                         terceiraPartedaHistoria();
-                    } else if (hpHeroi < 0) {
+                    } else if (hpHeroi <= 0) {
                         System.out.println("\nVocê foi esmagado pelo ogro!!!");
                         terminarJogoPorMorte();
                     }
@@ -369,7 +368,7 @@ public class ControleMenu {
         } while (hpHeroi > 0 && hpZumbi > 0);
 
         if (hpZumbi <= 0) {
-            System.out.println("\nVocê dizimou a horda de zumbi!!!");
+            System.out.println("\nVocê dizimou a horda de zumbis!!!");
             quartaPartedaHistoria();
         } else if (hpHeroi <= 0) {
             System.out.println("\nVocê foi devorado pelos zumbis!!!");
@@ -419,7 +418,8 @@ public class ControleMenu {
                     op04 = 0;
                 }
 
-                if (op04 == 1) {
+                if (op04 == 2) {
+
                     continuacao7_1();
                     terminarJogoPorMorte();
                 } else {
@@ -427,7 +427,7 @@ public class ControleMenu {
                     terminarJogo();
                 }
             }
-        } else if (hpHeroi < 0) {
+        } else if (hpHeroi <= 0) {
             System.out.println("\nVocê foi transformado zumbi!!!");
             terminarJogoPorMorte();
         }
