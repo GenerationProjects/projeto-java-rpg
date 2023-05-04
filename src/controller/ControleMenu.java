@@ -288,7 +288,6 @@ public class ControleMenu {
             op03 = 2;
         }
 
-
         switch (op03) {
             case 1:
                 do {
@@ -420,6 +419,7 @@ public class ControleMenu {
                 }
 
                 if (op04 == 2) {
+
                     continuacao7_1();
                     terminarJogoPorMorte();
                 } else {
