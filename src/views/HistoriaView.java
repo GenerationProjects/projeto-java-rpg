@@ -12,7 +12,7 @@ public class HistoriaView {
                 planícies, pântanos obscuros e criaturas místicas, governado pelo rei Calander Ultric,
                 que tem punhos fortes, é ambicioso e dominador. Casado com a rainha Nefereti Belmond,
                 tem três filhos: Nagiel, Aquio e Estrid.
-                
+                                
                 """;
         impressaoLentaPorCaracter(intro);
     }
@@ -107,7 +107,7 @@ public class HistoriaView {
                 Passando pela floresta, o grupo avista o Forte do Lich em meio ao pântano
                 repleto de zumbis protegendo o local, e a única opção é lutar contra esse
                 exército. Os heróis se aproximam dos zumbis brandindo suas espadas com terminação.
-                  ...ataca o primeiro zumbi, acertando-o em cheio e destruindo-o. Em seguida, ele
+                ...ataca o primeiro zumbi, acertando-o em cheio e destruindo-o. Em seguida, ele
                 se prepara para o próximo ataque.
 
                 Os zumbis avançam em direção aos heróis, com suas mãos e dentes em riste. Eles
@@ -121,7 +121,7 @@ public class HistoriaView {
 
     public static void continuacao6() {
         impressaoLentaPorCaracter("""
-                
+                                
                 O Lich permanece no fundo da sala, observando a batalha com um sorriso malicioso.
                 Ele conjura um raio de energia em direção aos heróis, derrubando a maioria deles,
                 e sobrando apenas o rei Ultric e   """);
@@ -137,35 +137,35 @@ public class HistoriaView {
 
     public static void continuacao7() {
         impressaoLentaPorCaracter("""
-                
+                                
                 Ao fim da batalha, o lich se ajoelha com ódio em seus olhos, culpando o rei de todo
                 o mal que acontece nas terra de Helmont, ele então olha para o herói, e com uma magia
                 o faz ter visões de tudo que o lich passou e presenciou durante anos servindo a Coroa
                 como bobo da corte, e como foi morto brutalmente por uma simples piada, o lich conta ao
                 herói sobre os planos do rei contra os povos mais pobres do reino.
-                
+                                
                 Você fica pasmo com as visões e com o impacto que a magia teve em seu cérebro e recupera
                 todas suas memórias. Ultric fica enfurecido e começa a gritar e dizer para o herói não cair
                 nas manipulações do lich e o finalizar ele logo.
-                
+                                
                 Você se lembra da chacina que os soldados do rei fizeram na vila de Breakwood e sem pensar
                 duas vezes ataca o rei Ultric o matando na mesma hora. O lich solta uma gargalhada e diz
                 que esperou a vida toda por isso.
-                
+                                
                 """);
     }
 
     public static void continuacao7_1() {
         impressaoLentaPorCaracter("""
-                
+                                
                 O herói mata o lich porque, mesmo sendo grande parte culpa do rei, o bobo da corte também
                 matou pessoas inocentes em busca de sua vingança. Ao morrer, o lich entoa uma magia em uma
                 língua desconhecida te amaldiçoando, que acaba caindo, agonizando em dor.
-                
+                                
                 Estrid, o filho mais velho e sucessor à coroa, passa a governar o reino substituindo seu pai.
-                
+                                
                 FIM!
-                
+                                
                 """);
     }
 
@@ -173,7 +173,7 @@ public class HistoriaView {
         impressaoLentaPorCaracter("""
                                 
                 O herói poupa o lich e juntos levam o reino de Helmont ao caos, agora dominado por cadáveres.
-                
+                                
                 FIM!
                 """);
     }

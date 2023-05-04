@@ -168,25 +168,28 @@ public class ControleMenu {
             }
         }
 
-        System.out.print("\n\nEscolha seu nome: ");
+        System.out.print("\nEscolha seu nome: ");
         nome = sc.nextLine();
-        impressaoLentaPorCaracter("Que nome peculiar...");
-
-        System.out.print("\n\nDigite sua altura: ");
+        impressaoLentaPorCaracter("\nQue nome peculiar...\n");
 
         try {
+            System.out.print("\nDigite sua altura: ");
             altura = sc.nextFloat();
         } catch (InputMismatchException e) {
             impressaoLentaPorCaracter("\nPor não estar de acordo com a nossa política você será punido... vamos te atribuir a altura de um anão.");
+            sc.nextLine();
             altura = 1.30f;
+
         }
 
-        escolhaDeRaca();
         try {
+            escolhaDeRaca();
             esc = sc.nextInt();
         } catch (InputMismatchException e) {
             impressaoLentaPorCaracter("\nInteressante escolha... vamos te atribuir como 'Elfo' e prosseguir");
+            sc.nextLine();
             esc = 3;
+
         }
 
         raca = (esc == 1) ? "Humano" : (esc == 2) ? "Orc" : "Elfo";
@@ -194,13 +197,14 @@ public class ControleMenu {
             impressaoLentaPorCaracter("\nInteressante escolha... vamos te atribuir como 'Elfo' e prosseguir");
         }
 
-        escolhaDeGenero();
         try {
+            escolhaDeGenero();
             esc = sc.nextInt();
-            sc.nextLine();
         } catch (InputMismatchException e) {
             impressaoLentaPorCaracter("\nInteressante escolha... vamos te atribuir como 'Feminino' e prosseguir");
+            sc.nextLine();
             esc = 2;
+
         }
 
         genero = (esc == 1) ? "Masculino" : "Feminino";
@@ -217,12 +221,18 @@ public class ControleMenu {
 
     public void primeiraParteDaHistoria() {
 
-        impressaoLentaPorCaracter("\n\n"+heroi.mostrarnome());
+        impressaoLentaPorCaracter("\n\n" + heroi.mostrarnome());
         inicioJornada();
+
         int op02;
 
-        primeiraEscolha();
-        op02 = sc.nextInt();
+        try {
+            primeiraEscolha();
+            op02 = sc.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Por violar as nossas escolhas você será redirecionado para a opção 1");
+            op02 = 1;
+        }
 
         if (op02 == 1) {
 
@@ -260,16 +270,24 @@ public class ControleMenu {
     }
 
     public void segundaPartedaHistoria() {
+        int op03;
+        int hpOgro = 7000;
+        int hpHeroi = heroi.hpHeroi;
+        int vez = 0;
+
         continuacao3();
 
         // colocar armadura e ganhar equipamentos
 
         continuacao4();
         segundaEscolha();
-        int op03 = sc.nextInt();
-        int hpOgro = 7000;
-        int hpHeroi = heroi.hpHeroi;
-        int vez = 0;
+        try {
+            op03 = sc.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Por violar as nossas escolhas você será redirecionado para a opção 2");
+            op03 = 2;
+        }
+
 
         switch (op03) {
             case 1:
@@ -331,7 +349,7 @@ public class ControleMenu {
         }
     }
 
-    private void terceiraPartedaHistoria() {
+    public void terceiraPartedaHistoria() {
         continuacao5();
         int hpZumbi = 10000;
         int hpHeroi = heroi.hpHeroi;
@@ -353,7 +371,7 @@ public class ControleMenu {
         if (hpZumbi <= 0) {
             System.out.println("\nVocê dizimou a horda de zumbi!!!");
             quartaPartedaHistoria();
-        } else if (hpHeroi < 0) {
+        } else if (hpHeroi <= 0) {
             System.out.println("\nVocê foi devorado pelos zumbis!!!");
             terminarJogoPorMorte();
         }
@@ -363,7 +381,7 @@ public class ControleMenu {
     public void quartaPartedaHistoria() {
         continuacao6();
 
-        impressaoLentaPorCaracter(" "+heroi.mostrarnome()+".");
+        impressaoLentaPorCaracter(" " + heroi.mostrarnome() + ".");
         continuacao6_2();
 
         int hpLich = 15000;
@@ -391,11 +409,13 @@ public class ControleMenu {
 
             while (op04 == 0) {
                 terceiraEscolha();
+
                 try {
                     op04 = sc.nextInt();
                     sc.nextLine();
                 } catch (InputMismatchException e) {
                     impressaoLentaPorCaracter("\nOpção inválida... escolha novamente.");
+                    sc.nextLine();
                     op04 = 0;
                 }
 

@@ -166,11 +166,7 @@ public class MenuView {
                 |                                                |
                 |              1 - Poupar o lich                 |
                 |              2 - Matar o lich                  |
-<<<<<<< HEAD
                 |                                                |
-=======
-                |              3 - Matar o rei e o lich          |
->>>>>>> 8d7beae (Implementação do métodos quartaPartedaHistoria criação da classe HistoriaView)
                 |                                                |
                 |                                                |
                 |                                                |
