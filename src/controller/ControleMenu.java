@@ -29,7 +29,7 @@ public class ControleMenu {
             try {
                 op = sc.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("Errou !! (Fausto silva). Vamos começar mesmo assim!");
+                System.out.println("Errou !! (Fausto silva). Vamos começar a história mesmo assim!");
                 op = 1;
             }
 
@@ -38,9 +38,9 @@ public class ControleMenu {
                 case 2 -> iniciarJogo();
                 case 3 -> iniciarJogo();
                 default -> {
-                    System.out.println("Opção inválida! Vamos novamente...");
+                    System.out.println("Opção inválida! Mas você já sabia... Vamos começar a história mesmo assim!");
                     sc.nextLine();
-                    op = 0;
+                    op = 1;
                 }
             }
 
@@ -65,7 +65,7 @@ public class ControleMenu {
                 op = sc.nextInt();
                 sc.nextLine();
             } catch (InputMismatchException e) {
-                System.out.println("\nEscolha uma classe! Vamos tentar de novo...");
+                System.out.println("\nEscolha uma classe com '1', '2' ou '3'! Vamos tentar de novo...");
                 sc.nextLine();
                 op = 0;
             }
@@ -75,7 +75,7 @@ public class ControleMenu {
                 case 2 -> new ControleMenu().escolhaDoNomeERaca(sc, op);
                 case 3 -> new ControleMenu().escolhaDoNomeERaca(sc, op);
                 default -> {
-                    System.out.println("Opção inválida! Vamos novamente...");
+                    System.out.println("Opção inválida... só tem essas classes! Vamos novamente...");
                     op = 0;
                 }
             }
@@ -110,13 +110,13 @@ public class ControleMenu {
                         conf = sc.nextInt();
                         sc.nextLine();
                     } catch (InputMismatchException e) {
-                        System.out.println("\nConfirme ou escolha outra classe para continuar...");
+                        System.out.println("\nConfirme(1) ou escolha outra classe(2) para continuar...");
                         sc.nextLine();
                         conf = 0;
                     }
                     if (conf > 2 || conf < 0) {
-                        System.out.println("Opção inválida, vamos de novo!");
-                        conf = 0;
+                        System.out.println("\nNão tem essa opção... então vamos confirmar pra você!");
+                        conf = 1;
                     }
                 }
                 if (conf == 2) {
@@ -135,13 +135,13 @@ public class ControleMenu {
                         conf = sc.nextInt();
                         sc.nextLine();
                     } catch (InputMismatchException e) {
-                        System.out.println("\nConfirme ou escolha outra classe para continuar...");
+                        System.out.println("\nConfirme(1) ou escolha outra classe(2) para continuar...");
                         sc.nextLine();
                         conf = 0;
                     }
                     if (conf > 2 || conf < 0) {
-                        System.out.println("Opção inválida, vamos de novo!");
-                        conf = 0;
+                        System.out.println("Não tem essa opção... então vamos confirmar pra você!");
+                        conf = 1;
                     }
                 }
                 if (conf == 2) {
@@ -160,13 +160,13 @@ public class ControleMenu {
                         conf = sc.nextInt();
                         sc.nextLine();
                     } catch (InputMismatchException e) {
-                        System.out.println("\nConfirme ou escolha outra classe para continuar...");
+                        System.out.println("\nConfirme(1) ou escolha outra classe(2) para continuar...");
                         sc.nextLine();
                         conf = 0;
                     }
                     if (conf > 2 || conf < 0) {
-                        System.out.println("Opção inválida, vamos de novo!");
-                        conf = 0;
+                        System.out.println("Não tem essa opção... então vamos confirmar pra você!");
+                        conf = 1;
                     }
                 }
                 if (conf == 2) {
@@ -175,35 +175,51 @@ public class ControleMenu {
             }
         }
 
-        System.out.print("Escolha seu nome: ");
+        System.out.print("\n\nEscolha seu nome: ");
         nome = sc.nextLine();
-        System.out.print("Digite sua altura: ");
-        altura = sc.nextFloat();
-        escolhaDeRaca();
+        impressaoLentaPorCaracter("Que nome peculiar...");
 
-        esc = sc.nextInt();
-        sc.nextLine();
+        System.out.print("\n\nDigite sua altura: ");
+        altura = sc.nextFloat();
+
+        escolhaDeRaca();
+        try {
+            esc = sc.nextInt();
+            sc.nextLine();
+        } catch (InputMismatchException e) {
+            impressaoLentaPorCaracter("\nInteressante escolha... vamos te atribuir como 'Elfo' e prosseguir");
+            esc = 3;
+        }
 
         raca = (esc == 1) ? "Humano" : (esc == 2) ? "Orc" : "Elfo";
+        if (esc > 3 || esc < 1) {
+            impressaoLentaPorCaracter("\nInteressante escolha... vamos te atribuir como 'Elfo' e prosseguir");
+        }
 
         escolhaDeGenero();
-
-        esc = sc.nextInt();
-        sc.nextLine();
+        try {
+            esc = sc.nextInt();
+            sc.nextLine();
+        } catch (InputMismatchException e) {
+            impressaoLentaPorCaracter("\nInteressante escolha... vamos te atribuir como 'Feminino' e prosseguir");
+            esc = 2;
+        }
 
         genero = (esc == 1) ? "Masculino" : "Feminino";
-
+        if (esc > 2 || esc < 1) {
+            impressaoLentaPorCaracter("\nInteressante escolha... vamos te atribuir como 'Feminino' e prosseguir");
+        }
 
         heroi.adicionarHeroi((op == 1) ? new Guerreiro(nome, 2000, altura, genero, raca)
                 : (op == 2) ? new Arcano(nome, 1000, altura, genero, raca)
                 : new Cacador(nome, 1500, altura, genero, raca));
-        primeiraPartedaHistoria();
+        primeiraParteDaHistoria();
 
     }
 
-    public void primeiraPartedaHistoria() {
+    public void primeiraParteDaHistoria() {
 
-        impressaoLentaPorCaracter(heroi.mostrarnome());
+        impressaoLentaPorCaracter("\n\n"+heroi.mostrarnome());
         inicioJornada();
         int op;
 
@@ -286,10 +302,10 @@ public class ControleMenu {
             case 2:
                 int i = rolarDados();
                 if (i <= 5) {
-                    System.out.println("Seus argumentos foram convincentes e o ogro deixou vocês passarem");
+                    System.out.println("\n\nSeus argumentos foram convincentes!! O ogro deixou vocês passarem");
                     terceiraPartedaHistoria();
                 } else {
-                    System.out.println("O ogro se irritou: Você entrou no meu pântano!!");
+                    System.out.println("\n\nVocê não deu sorte e o ogro se irritou: 'Você entrou no meu pântano!!'");
                     vez = 0;
                     do {
                         if (vez % 2 == 0) {
@@ -338,7 +354,7 @@ public class ControleMenu {
         } while (hpHeroi > 0 && hpZumbi > 0);
 
         if (hpZumbi <= 0) {
-            System.out.println("\nVocê dizimou a orda de zumbi!!!");
+            System.out.println("\nVocê dizimou a horda de zumbi!!!");
             quartaPartedaHistoria();
         } else if (hpHeroi < 0) {
             System.out.println("\nVocê foi devorado pelos zumbis!!!");
@@ -349,14 +365,14 @@ public class ControleMenu {
 
     public void quartaPartedaHistoria() {
         continuacao6();
-        impressaoLentaPorCaracter(heroi.mostrarnome());
+        impressaoLentaPorCaracter(" "+heroi.mostrarnome()+".");
         continuacao6_2();
 
         int hpLich = 15000;
         int hpHeroi = heroi.hpHeroi;
         int vez = 0;
+        System.out.println("\nVamos para a batalha final!!!! ");
         do {
-            System.out.println("Vamos para a batalha final!!!! ");
             if (vez % 2 == 0) {
                 System.out.println("\nAgora é hora de Atacar!");
                 keyPress(vez);
@@ -388,6 +404,7 @@ public class ControleMenu {
                                                 
                         Se você ficar ao meu lado terá que matar o Rei para construir um mundo melhor
                         na escuridão.
+                        
                         """);
                 terminarJogo();
             }
@@ -395,8 +412,9 @@ public class ControleMenu {
                 impressaoLentaPorCaracter(heroi.mostrarnome());
 
                 impressaoLentaPorCaracter("""
-                                                
-                        Você fez uma boa escolha nobre guerreiro será promovido a mão do rei.
+                        
+                        Parabéns nobre guerreiro! Você fez uma escolha sábia e será promovido a mão do rei.
+                        
                         """);
                 terminarJogo();
             }
