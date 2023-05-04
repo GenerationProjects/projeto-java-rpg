@@ -12,7 +12,6 @@ import static views.HistoriaView.*;
 import static views.MenuView.*;
 
 public class ControleMenu {
-
     Scanner sc = new Scanner(System.in);
     ControllerHeroi heroi = new ControllerHeroi();
 
@@ -56,7 +55,6 @@ public class ControleMenu {
     public static void condicaoDeClasse() {
         Scanner sc = new Scanner(System.in);
         int op = 0;
-
 
         while (op == 0) {
             escolhaDeClasse();
