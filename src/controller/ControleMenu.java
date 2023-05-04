@@ -180,6 +180,7 @@ public class ControleMenu {
         impressaoLentaPorCaracter("Que nome peculiar...");
 
         System.out.print("\n\nDigite sua altura: ");
+
         try {
             altura = sc.nextFloat();
             sc.nextLine();
@@ -187,7 +188,6 @@ public class ControleMenu {
             impressaoLentaPorCaracter("\nPor não estar de acordo com a nossa política você será punido... vamos te atribuir a altura de um anão.");
             altura = 1.30f;
         }
-
 
         escolhaDeRaca();
         try {
@@ -312,6 +312,7 @@ public class ControleMenu {
                     terceiraPartedaHistoria();
                 } else {
                     System.out.println("\n\nVocê não deu sorte e o ogro se irritou: 'Você entrou no meu pântano!!'");
+
                     do {
                         if (vez % 2 == 0) {
                             System.out.println("\nAgora é hora de Atacar!");
@@ -418,9 +419,6 @@ public class ControleMenu {
             System.out.println("\nVocê foi transformado zumbi!!!");
             terminarJogoPorMorte();
         }
-
-
-
     }
 
 
