@@ -33,7 +33,7 @@ public class ControllerHeroi implements HeroiRepository {
         } else if (dado > 1 && dado < 7) {
             System.out.println("O seu ataque quase não deu dano e o monstro riu da sua cara!");
             return 1000;
-        } else if (dado > 7 && dado < 20) {
+        } else if (dado >= 7 && dado < 20) {
             System.out.println("O seu ataque deu bastante dano, o que deixou o monstro enfurecido!");
             return 3000;
         } else if (dado == 20) {
@@ -51,7 +51,7 @@ public class ControllerHeroi implements HeroiRepository {
         } else if (dado > 1 && dado < 7) {
             System.out.println("Você tomou bastante dano e está sangrando!");
             return 700;
-        } else if (dado > 7 && dado < 20) {
+        } else if (dado >= 7 && dado < 20) {
             System.out.println("Você quase não tomou dano e riu da cara do monstro!");
             return 100;
         } else if (dado == 20) {

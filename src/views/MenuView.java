@@ -211,13 +211,10 @@ public class MenuView {
             char c = texto.charAt(i);
             System.out.print(ANSI_BLUE + c);
             try {
-                TimeUnit.MILLISECONDS.sleep(10);
+                TimeUnit.MILLISECONDS.sleep(50);
             } catch (Exception e) {
-
             }
         }
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
     }
 
     public static void creditos() {

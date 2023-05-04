@@ -9,9 +9,9 @@ public class HistoriaView {
                 Terra média SÉC XIV.
 
                 Bem-vindo ao reino de Helmont: um mundo mágico repleto de montanhas congeladas,
-                planícies, pântanos obscuros e criaturas místicas, governado pelo rei Calander Ultric,
-                que tem punhos fortes, é ambicioso e dominador. Casado com a rainha Nefereti Belmond,
-                tem três filhos: Nagiel, Aquio e Estrid.
+                planícies, pântanos obscuros e criaturas místicas. Calander Ultric, um rei 
+                que governa com punhos fortes, é ambicioso e dominador. Casado com a 
+                rainha Nefereti Belmond, tem três filhos: Nagiel, Aquio e Estrid.
                                 
                 """;
         impressaoLentaPorCaracter(intro);
@@ -107,8 +107,7 @@ public class HistoriaView {
                 Passando pela floresta, o grupo avista o Forte do Lich em meio ao pântano
                 repleto de zumbis protegendo o local, e a única opção é lutar contra esse
                 exército. Os heróis se aproximam dos zumbis brandindo suas espadas com terminação.
-                ...ataca o primeiro zumbi, acertando-o em cheio e destruindo-o. Em seguida, ele
-                se prepara para o próximo ataque.
+                Você ataca o primeiro zumbi, acertando-o em cheio e destruindo-o.
 
                 Os zumbis avançam em direção aos heróis, com suas mãos e dentes em riste. Eles
                 se dividem em dois grupos e os atacam derrubando e transformando 3 dos 10 do
