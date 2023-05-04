@@ -12,35 +12,34 @@ import static views.HistoriaView.*;
 import static views.MenuView.*;
 
 public class ControleMenu {
-
     Scanner sc = new Scanner(System.in);
     ControllerHeroi heroi = new ControllerHeroi();
 
     public static void controleInicial() {
 
         Scanner sc = new Scanner(System.in);
-        int op = 0;
+        int op00 = 0;
 
 
         introLore();
 
-        while (op == 0) {
+        while (op00 == 0) {
             inicialMenu();
             try {
-                op = sc.nextInt();
+                op00 = sc.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("Errou !! (Fausto silva). Vamos começar a história mesmo assim!");
-                op = 1;
+                op00 = 1;
             }
 
-            switch (op) {
+            switch (op00) {
                 case 1 -> iniciarJogo();
                 case 2 -> iniciarJogo();
                 case 3 -> iniciarJogo();
                 default -> {
                     System.out.println("Opção inválida! Mas você já sabia... Vamos começar a história mesmo assim!");
                     sc.nextLine();
-                    op = 1;
+                    op00 = 1;
                 }
             }
 
@@ -52,31 +51,29 @@ public class ControleMenu {
         condicaoDeClasse();
     }
 
-
     public static void condicaoDeClasse() {
         Scanner sc = new Scanner(System.in);
-        int op = 0;
+        int op01 = 0;
 
-
-        while (op == 0) {
+        while (op01 == 0) {
             escolhaDeClasse();
 
             try {
-                op = sc.nextInt();
+                op01 = sc.nextInt();
                 sc.nextLine();
             } catch (InputMismatchException e) {
                 System.out.println("\nEscolha uma classe com '1', '2' ou '3'! Vamos tentar de novo...");
                 sc.nextLine();
-                op = 0;
+                op01 = 0;
             }
 
-            switch (op) {
-                case 1 -> new ControleMenu().escolhaDoNomeERaca(sc, op);
-                case 2 -> new ControleMenu().escolhaDoNomeERaca(sc, op);
-                case 3 -> new ControleMenu().escolhaDoNomeERaca(sc, op);
+            switch (op01) {
+                case 1 -> new ControleMenu().escolhaDoNomeERaca(sc, op01);
+                case 2 -> new ControleMenu().escolhaDoNomeERaca(sc, op01);
+                case 3 -> new ControleMenu().escolhaDoNomeERaca(sc, op01);
                 default -> {
                     System.out.println("Opção inválida... só tem essas classes! Vamos novamente...");
-                    op = 0;
+                    op01 = 0;
                 }
             }
         }
@@ -85,7 +82,6 @@ public class ControleMenu {
     public static int rolarDados() {
         return new Random().nextInt(1, 20);
     }
-
 
     public void escolhaDoNomeERaca(Scanner sc, int op) {
 
@@ -104,8 +100,7 @@ public class ControleMenu {
                     System.out.println("""
                             Deseja confirmar?
                             1 - Sim.
-                            2 - Escolher outra classe.
-                            """);
+                            2 - Escolher outra classe.""");
                     try {
                         conf = sc.nextInt();
                         sc.nextLine();
@@ -129,8 +124,7 @@ public class ControleMenu {
                     System.out.println("""
                             Deseja confirmar?
                             1 - Sim.
-                            2 - Escolher outra classe.
-                            """);
+                            2 - Escolher outra classe.""");
                     try {
                         conf = sc.nextInt();
                         sc.nextLine();
@@ -154,8 +148,7 @@ public class ControleMenu {
                     System.out.println("""
                             Deseja confirmar?
                             1 - Sim.
-                            2 - Escolher outra classe.
-                            """);
+                            2 - Escolher outra classe""");
                     try {
                         conf = sc.nextInt();
                         sc.nextLine();
@@ -175,27 +168,28 @@ public class ControleMenu {
             }
         }
 
-        System.out.print("\n\nEscolha seu nome: ");
+        System.out.print("\nEscolha seu nome: ");
         nome = sc.nextLine();
-        impressaoLentaPorCaracter("Que nome peculiar...");
-
-        System.out.print("\n\nDigite sua altura: ");
+        impressaoLentaPorCaracter("\nQue nome peculiar...\n");
 
         try {
+            System.out.print("\nDigite sua altura: ");
             altura = sc.nextFloat();
-            sc.nextLine();
         } catch (InputMismatchException e) {
             impressaoLentaPorCaracter("\nPor não estar de acordo com a nossa política você será punido... vamos te atribuir a altura de um anão.");
+            sc.nextLine();
             altura = 1.30f;
+
         }
 
-        escolhaDeRaca();
         try {
+            escolhaDeRaca();
             esc = sc.nextInt();
-            sc.nextLine();
         } catch (InputMismatchException e) {
             impressaoLentaPorCaracter("\nInteressante escolha... vamos te atribuir como 'Elfo' e prosseguir");
+            sc.nextLine();
             esc = 3;
+
         }
 
         raca = (esc == 1) ? "Humano" : (esc == 2) ? "Orc" : "Elfo";
@@ -203,13 +197,14 @@ public class ControleMenu {
             impressaoLentaPorCaracter("\nInteressante escolha... vamos te atribuir como 'Elfo' e prosseguir");
         }
 
-        escolhaDeGenero();
         try {
+            escolhaDeGenero();
             esc = sc.nextInt();
-            sc.nextLine();
         } catch (InputMismatchException e) {
             impressaoLentaPorCaracter("\nInteressante escolha... vamos te atribuir como 'Feminino' e prosseguir");
+            sc.nextLine();
             esc = 2;
+
         }
 
         genero = (esc == 1) ? "Masculino" : "Feminino";
@@ -226,18 +221,23 @@ public class ControleMenu {
 
     public void primeiraParteDaHistoria() {
 
-        impressaoLentaPorCaracter("\n\n"+heroi.mostrarnome());
+        impressaoLentaPorCaracter("\n\n" + heroi.mostrarnome());
         inicioJornada();
-        int op1;
 
-        primeiraEscolha();
-        op1 = sc.nextInt();
+        int op02;
 
-        if (op1 == 1) {
+        try {
+            primeiraEscolha();
+            op02 = sc.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Por violar as nossas escolhas você será redirecionado para a opção 1");
+            op02 = 1;
+        }
+
+        if (op02 == 1) {
 
             System.out.println("Você foi explorar o buraco e acabou caindo em uma armadilha!!!!");
             terminarJogoPorMorte();
-
 
         } else {
             continuacao2();
@@ -270,18 +270,26 @@ public class ControleMenu {
     }
 
     public void segundaPartedaHistoria() {
+        int op03;
+        int hpOgro = 7000;
+        int hpHeroi = heroi.hpHeroi;
+        int vez = 0;
+
         continuacao3();
 
         // colocar armadura e ganhar equipamentos
 
         continuacao4();
         segundaEscolha();
-        int op2 = sc.nextInt();
-        int hpOgro = 7000;
-        int hpHeroi = heroi.hpHeroi;
-        int vez = 0;
+        try {
+            op03 = sc.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Por violar as nossas escolhas você será redirecionado para a opção 2");
+            op03 = 2;
+        }
 
-        switch (op2) {
+
+        switch (op03) {
             case 1:
                 do {
                     if (vez % 2 == 0) {
@@ -309,6 +317,7 @@ public class ControleMenu {
                 int i = rolarDados();
                 if (i <= 5) {
                     System.out.println("\n\nSeus argumentos foram convincentes!! O ogro deixou vocês passarem");
+
                     terceiraPartedaHistoria();
                 } else {
                     System.out.println("\n\nVocê não deu sorte e o ogro se irritou: 'Você entrou no meu pântano!!'");
@@ -340,7 +349,7 @@ public class ControleMenu {
         }
     }
 
-    private void terceiraPartedaHistoria() {
+    public void terceiraPartedaHistoria() {
         continuacao5();
         int hpZumbi = 10000;
         int hpHeroi = heroi.hpHeroi;
@@ -362,7 +371,7 @@ public class ControleMenu {
         if (hpZumbi <= 0) {
             System.out.println("\nVocê dizimou a horda de zumbi!!!");
             quartaPartedaHistoria();
-        } else if (hpHeroi < 0) {
+        } else if (hpHeroi <= 0) {
             System.out.println("\nVocê foi devorado pelos zumbis!!!");
             terminarJogoPorMorte();
         }
@@ -371,7 +380,8 @@ public class ControleMenu {
 
     public void quartaPartedaHistoria() {
         continuacao6();
-        impressaoLentaPorCaracter(" "+heroi.mostrarnome()+".");
+
+        impressaoLentaPorCaracter(" " + heroi.mostrarnome() + ".");
         continuacao6_2();
 
         int hpLich = 15000;
@@ -395,19 +405,21 @@ public class ControleMenu {
         if (hpLich <= 0) {
             System.out.println("\nVocê nocauteou o Lich!!!");
             continuacao7();
-            int op3 = 0;
+            int op04 = 0;
 
-            while (op3 == 0) {
+            while (op04 == 0) {
                 terceiraEscolha();
+
                 try {
-                    op3 = sc.nextInt();
+                    op04 = sc.nextInt();
                     sc.nextLine();
                 } catch (InputMismatchException e) {
                     impressaoLentaPorCaracter("\nOpção inválida... escolha novamente.");
-                    op3 = 0;
+                    sc.nextLine();
+                    op04 = 0;
                 }
 
-                if (op3 == 1) {
+                if (op04 == 1) {
                     continuacao7_1();
                     terminarJogoPorMorte();
                 } else {
@@ -420,7 +432,6 @@ public class ControleMenu {
             terminarJogoPorMorte();
         }
     }
-
 
     public static void terminarJogoPorMorte() {
         voceEstaMorto();
